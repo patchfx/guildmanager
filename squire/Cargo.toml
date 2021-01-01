@@ -8,6 +8,9 @@ edition = "2018"
 
 [dependencies]
 gdnative = "0.9.1"
+rand = "0.8"
+specs = "0.16.1"
+specs-derive = "0.4.1"
 
 [lib]
 crate-type = ["cdylib"]
