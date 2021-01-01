@@ -1,5 +1,6 @@
 use gdnative::prelude::*;
 use specs::prelude::*;
+use rand::prelude::*;
 
 mod components;
 mod utilities;
@@ -29,13 +30,14 @@ impl GameState {
     }
 
     #[export]
-    fn load(&mut self, _owner: &Node) {
+    fn load(&mut self, _owner: &Node, names: Vec<String>) {
         let character_count = 2000;
         let dice = Dice {};
+        let mut rng = rand::thread_rng();
 
         for _x in 0..character_count {
             let character = Character {
-                name: "".into(),
+                name: format!("{} {}", names[rng.gen_range(1..names.len() - 1) as usize], names[rng.gen_range(1..names.len() - 1) as usize]),
                 might: dice.roll_multiple(3, 6),
                 mind: dice.roll_multiple(3, 6),
                 reflex: dice.roll_multiple(3, 6),
