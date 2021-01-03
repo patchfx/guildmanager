@@ -65,7 +65,7 @@ impl GameState {
     }
 
     #[export]
-    fn quests(&mut self, _owner: &Node) -> Vec<Quest> {
+    fn load_quests(&mut self, _owner: &Node) -> Vec<Quest> {
         let file = File::open("./Resources/quests.json").unwrap();
         let reader = BufReader::new(file);
         let quests: Quests = serde_json::from_reader(reader).unwrap();

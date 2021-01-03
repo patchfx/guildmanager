@@ -73,7 +73,7 @@ func _ready():
 	#for character in characters:
 		#print(character)
 		
-	var quests = GameState.quests()
+	var quests = GameState.load_quests()
 
 	for q in quests:
 		var popup = load("res://Scenes/QuestPopup.tscn").instance()
@@ -85,5 +85,4 @@ func _ready():
 func _process(delta):
 	if loaded:
 		var q = GameState.current_quests()
-
 		$TopMarginContainer/Quests.text = "Quests: " + str(q.size())
