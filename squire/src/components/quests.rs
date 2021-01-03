@@ -1,8 +1,10 @@
 use specs::prelude::*;
+use specs_derive::Component;
 use serde::{Serialize, Deserialize};
 use gdnative::prelude::*;
 
-#[derive(Debug, PartialEq, Deserialize, Serialize, NativeClass, ToVariant)]
+
+#[derive(Debug, PartialEq, Deserialize, Serialize, NativeClass, ToVariant, Component)]
 #[inherit(Node)]
 pub struct Quest {
   pub id: i32,
@@ -31,4 +33,9 @@ impl Quest {
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Quests {
   pub quests: Vec<Quest>,
+}
+
+#[derive(Debug, Component, Deserialize, Serialize)]
+pub struct AcceptedQuest {
+  pub quest_id: i32
 }

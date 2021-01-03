@@ -11,6 +11,7 @@ var names = ['Adara', 'Adena', 'Adrianne', 'Alarice', 'Alvita', 'Amara', 'Ambika
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 var markov = {}
+var loaded = false
 
 func loadNames(markov, names):
 	for name in names:
@@ -78,3 +79,11 @@ func _ready():
 		var popup = load("res://Scenes/QuestPopup.tscn").instance()
 		popup.init(q)
 		add_child(popup)
+	
+	loaded = true
+
+func _process(delta):
+	if loaded:
+		var q = GameState.current_quests()
+
+		$TopMarginContainer/Quests.text = "Quests: " + str(q.size())

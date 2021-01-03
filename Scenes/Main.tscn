@@ -13,6 +13,7 @@ margin_left = -953.0
 margin_top = 10.0
 margin_right = 957.0
 margin_bottom = 40.0
+theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -24,3 +25,9 @@ margin_bottom = 28.0
 theme = ExtResource( 2 )
 text = "Week 1"
 align = 1
+
+[node name="Quests" type="Label" parent="TopMarginContainer"]
+margin_top = 2.0
+margin_right = 1910.0
+margin_bottom = 28.0
+text = "Quests: 0"
