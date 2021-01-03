@@ -46,6 +46,7 @@ margin_left = 37.6652
 margin_top = 90.6652
 margin_right = 425.665
 margin_bottom = 567.665
+bbcode_enabled = true
 bbcode_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ipsum augue, pharetra at sem nec, venenatis commodo orci. Integer a quam egestas, maximus nisi dapibus, sodales eros. Duis eget vehicula elit, eu dictum eros. Quisque ullamcorper erat at lacus egestas, non dapibus ipsum mollis. Aliquam tempus risus sit amet tristique ultrices. Praesent placerat vestibulum magna, a efficitur mi maximus a. Integer congue leo nibh, at mattis orci placerat ut. Etiam sit amet diam a odio pharetra suscipit et at purus."
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ipsum augue, pharetra at sem nec, venenatis commodo orci. Integer a quam egestas, maximus nisi dapibus, sodales eros. Duis eget vehicula elit, eu dictum eros. Quisque ullamcorper erat at lacus egestas, non dapibus ipsum mollis. Aliquam tempus risus sit amet tristique ultrices. Praesent placerat vestibulum magna, a efficitur mi maximus a. Integer congue leo nibh, at mattis orci placerat ut. Etiam sit amet diam a odio pharetra suscipit et at purus."
 __meta__ = {

@@ -1,7 +1,9 @@
 {
   "quests": [
     {
-      "quest_name": "Kill 2 Kobolds"
+      "quest_name": "Kill 4 Kobolds",
+      "expires": 2,
+      "description": "I am Quinn Goraneth, mayor of Fellspeare Village. A band of [color=#ff0000]4 Kobolds[/color] attacked during the night stealing from our already dwindling supplies. We have little coin, hence why we are approaching your fledgling guild, but will pay what we can spare as a reward. Can you help?"
     }
   ]
 }

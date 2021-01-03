@@ -6,6 +6,8 @@ use gdnative::prelude::*;
 #[inherit(Node)]
 pub struct Quest {
   pub quest_name: String,
+  pub expires: i32,
+  pub description: String,
 }
 
 #[methods]
@@ -13,6 +15,8 @@ impl Quest {
     fn new(_owner: &Node) -> Self {
         Quest {
           quest_name: "".into(),
+          expires: 0,
+          description: "".into(),
         }
     }
 
