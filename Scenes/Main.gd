@@ -76,4 +76,4 @@ func _ready():
 	
 	for q in quests:
 		$QuestPopup/TitleText.text = q.quest_name
-		$QuestPopup/BodyText.bbcode_text = q.description
+		$QuestPopup/BodyText.bbcode_text = q.description + "\n\n" + "Reward: [color=#dbcd00]" + str(q.reward) + "g[/color]"

@@ -8,6 +8,7 @@ pub struct Quest {
   pub quest_name: String,
   pub expires: i32,
   pub description: String,
+  pub reward: i32,
 }
 
 #[methods]
@@ -17,6 +18,7 @@ impl Quest {
           quest_name: "".into(),
           expires: 0,
           description: "".into(),
+          reward: 0,
         }
     }
 
