@@ -75,5 +75,5 @@ func _ready():
 	var quests = GameState.quests()
 	
 	for q in quests:
-		$PopupWindow/TitleText.text = q.quest_name
-		$PopupWindow/BodyText.bbcode_text = q.description
+		$QuestPopup/TitleText.text = q.quest_name
+		$QuestPopup/BodyText.bbcode_text = q.description
