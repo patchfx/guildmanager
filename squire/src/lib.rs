@@ -1,6 +1,6 @@
 use gdnative::prelude::*;
-use specs::prelude::*;
 use rand::prelude::*;
+use specs::prelude::*;
 use std::fs::File;
 use std::io::BufReader;
 
@@ -40,15 +40,17 @@ impl GameState {
         let dice = Dice {};
         let mut rng = rand::thread_rng();
 
-        let player = self.ecs.create_entity()
-            .with(Player {})
-            .build();
-        
+        let player = self.ecs.create_entity().with(Player {}).build();
+
         self.ecs.insert(player);
 
         for _x in 0..character_count {
             let character = Character {
-                name: format!("{} {}", names[rng.gen_range(1..names.len() - 1) as usize], names[rng.gen_range(1..names.len() - 1) as usize]),
+                name: format!(
+                    "{} {}",
+                    names[rng.gen_range(1..names.len() - 1) as usize],
+                    names[rng.gen_range(1..names.len() - 1) as usize]
+                ),
                 might: dice.roll_multiple(3, 6),
                 mind: dice.roll_multiple(3, 6),
                 reflex: dice.roll_multiple(3, 6),
@@ -56,11 +58,7 @@ impl GameState {
                 charisma: dice.roll_multiple(3, 6),
             };
 
-            self.ecs
-                .create_entity()
-                .with(character)
-                .build();
-
+            self.ecs.create_entity().with(character).build();
         }
     }
 
@@ -71,7 +69,8 @@ impl GameState {
         let quests: Quests = serde_json::from_reader(reader).unwrap();
 
         for quest in quests.quests.iter() {
-            self.ecs.create_entity()
+            self.ecs
+                .create_entity()
                 .with(Quest {
                     id: quest.id,
                     quest_name: quest.quest_name.clone(),
@@ -117,15 +116,17 @@ impl GameState {
 
         for quest in (&quests).join() {
             if quest.id == quest_id {
-                for (_player, entity) in (&player, &entities).join()  {
+                for (_player, entity) in (&player, &entities).join() {
                     let mut accepted_quests = self.ecs.write_storage::<AcceptedQuest>();
                     let accepted_quest = AcceptedQuest { quest_id: quest.id };
-                    accepted_quests.insert(entity, accepted_quest).expect("Cannot accept quest");
+                    accepted_quests
+                        .insert(entity, accepted_quest)
+                        .expect("Cannot accept quest");
                     godot_print!("Quest inserted!!");
                 }
             }
         }
-    } 
+    }
 
     #[export]
     fn npcs(&self, _owner: &Node) -> Vec<GameCharacter> {
