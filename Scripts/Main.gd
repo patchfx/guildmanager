@@ -73,7 +73,8 @@ func _ready():
 		#print(character)
 		
 	var quests = GameState.quests()
-	
+
 	for q in quests:
-		$QuestPopup/TitleText.text = q.quest_name
-		$QuestPopup/BodyText.bbcode_text = q.description + "\n\n" + "Reward: [color=#dbcd00]" + str(q.reward) + "g[/color]"
+		var popup = load("res://Scenes/QuestPopup.tscn").instance()
+		popup.init(q)
+		add_child(popup)

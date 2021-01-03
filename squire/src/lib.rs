@@ -65,6 +65,11 @@ impl GameState {
     }
 
     #[export]
+    fn accept_quest(&self, _owner: &Node, quest_id: i32) {
+        godot_print!("Accepting the quest: {}", quest_id);
+    } 
+
+    #[export]
     fn npcs(&self, _owner: &Node) -> Vec<GameCharacter> {
         let entities = self.ecs.entities();
 

@@ -5,6 +5,7 @@ use gdnative::prelude::*;
 #[derive(Debug, PartialEq, Deserialize, Serialize, NativeClass, ToVariant)]
 #[inherit(Node)]
 pub struct Quest {
+  pub id: i32,
   pub quest_name: String,
   pub expires: i32,
   pub description: String,
@@ -15,6 +16,7 @@ pub struct Quest {
 impl Quest {
     fn new(_owner: &Node) -> Self {
         Quest {
+          id: 0,
           quest_name: "".into(),
           expires: 0,
           description: "".into(),

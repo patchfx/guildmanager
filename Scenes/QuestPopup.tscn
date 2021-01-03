@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 02.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Themes/button_normal.tres" type="Texture" id=3]
+[ext_resource path="res://Assets/Themes/button_active.tres" type="Texture" id=4]
+[ext_resource path="res://Scripts/QuestPopup.gd" type="Script" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 506.374, 74.8219, 467.768, 635.968 )
+
+[node name="QuestPopup" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 733.634
+margin_top = 156.59
+margin_right = -719.366
+margin_bottom = -284.41
+theme = ExtResource( 2 )
+texture = SubResource( 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleText" type="RichTextLabel" parent="."]
+anchor_right = 0.051
+anchor_bottom = 0.031
+margin_left = 41.0
+margin_top = 38.0
+margin_right = 400.183
+margin_bottom = 45.191
+theme = ExtResource( 2 )
+text = "Quest Title"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BodyText" type="RichTextLabel" parent="."]
+margin_left = 37.6652
+margin_top = 90.6652
+margin_right = 425.665
+margin_bottom = 567.665
+bbcode_enabled = true
+bbcode_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ipsum augue, pharetra at sem nec, venenatis commodo orci. Integer a quam egestas, maximus nisi dapibus, sodales eros. Duis eget vehicula elit, eu dictum eros. Quisque ullamcorper erat at lacus egestas, non dapibus ipsum mollis. Aliquam tempus risus sit amet tristique ultrices. Praesent placerat vestibulum magna, a efficitur mi maximus a. Integer congue leo nibh, at mattis orci placerat ut. Etiam sit amet diam a odio pharetra suscipit et at purus."
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ipsum augue, pharetra at sem nec, venenatis commodo orci. Integer a quam egestas, maximus nisi dapibus, sodales eros. Duis eget vehicula elit, eu dictum eros. Quisque ullamcorper erat at lacus egestas, non dapibus ipsum mollis. Aliquam tempus risus sit amet tristique ultrices. Praesent placerat vestibulum magna, a efficitur mi maximus a. Integer congue leo nibh, at mattis orci placerat ut. Etiam sit amet diam a odio pharetra suscipit et at purus."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestButton" type="TextureButton" parent="."]
+margin_left = 267.693
+margin_top = 557.778
+margin_right = 427.693
+margin_bottom = 597.778
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 3 )
+texture_focused = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcceptQuest" type="Label" parent="QuestButton"]
+margin_left = 13.0
+margin_top = 8.0
+margin_right = 148.0
+margin_bottom = 34.0
+text = "ACCEPT"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="QuestButton" to="." method="_on_QuestButton_button_up"]
