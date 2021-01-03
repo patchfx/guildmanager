@@ -1,6 +1,8 @@
 use gdnative::prelude::*;
 use specs::prelude::*;
 use rand::prelude::*;
+use std::fs::File;
+use std::io::BufReader;
 
 mod components;
 mod utilities;
@@ -51,6 +53,15 @@ impl GameState {
                 .build();
 
         }
+    }
+
+    #[export]
+    fn quests(&self, _owner: &Node) -> Vec<Quest> {
+        let file = File::open("./Resources/quests.json").unwrap();
+        let reader = BufReader::new(file);
+        let quests: Quests = serde_json::from_reader(reader).unwrap();
+
+        quests.quests
     }
 
     #[export]

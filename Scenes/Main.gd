@@ -66,8 +66,13 @@ func _ready():
 		new_name = getName(random_letter, 4, 7)
 		new_name = new_name.capitalize()
 		populated_list.push_back(new_name)
-	GameState.load(populated_list);
+	GameState.load(populated_list)
 	var characters = GameState.npcs()
 
-	for character in characters:
-		print(character)
+	#for character in characters:
+		#print(character)
+		
+	var quests = GameState.quests()
+	
+	for q in quests:
+		print(q)
