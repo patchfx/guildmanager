@@ -37,4 +37,5 @@ pub struct Quests {
 #[derive(Debug, Component, Deserialize, Serialize)]
 pub struct AcceptedQuest {
     pub quest_id: i32,
+    pub completed: bool,
 }

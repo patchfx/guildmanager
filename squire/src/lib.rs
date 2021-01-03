@@ -91,7 +91,7 @@ impl GameState {
 
         for quest in (all_quests).join() {
             for accepted_quest in (accepted_quests).join() {
-                if accepted_quest.quest_id == quest.id {
+                if accepted_quest.quest_id == quest.id && !accepted_quest.completed {
                     let q = Quest {
                         id: quest.id,
                         quest_name: quest.quest_name.clone(),
@@ -118,7 +118,10 @@ impl GameState {
             if quest.id == quest_id {
                 for (_player, entity) in (&player, &entities).join() {
                     let mut accepted_quests = self.ecs.write_storage::<AcceptedQuest>();
-                    let accepted_quest = AcceptedQuest { quest_id: quest.id };
+                    let accepted_quest = AcceptedQuest {
+                        quest_id: quest.id,
+                        completed: false,
+                    };
                     accepted_quests
                         .insert(entity, accepted_quest)
                         .expect("Cannot accept quest");
