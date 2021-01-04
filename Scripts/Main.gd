@@ -26,4 +26,4 @@ func _ready():
 func _process(delta):
 	if loaded:
 		var q = GameState.current_quests()
-		$Quests.text = "Quests: " + str(q.size())
+		$TopBar/Quests.text = "Quests: " + str(q.size())
