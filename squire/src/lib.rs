@@ -25,6 +25,7 @@ impl GameState {
         ecs.register::<Player>();
         ecs.register::<Quest>();
         ecs.register::<AcceptedQuest>();
+        ecs.register::<Week>();
 
         GameState { ecs }
     }
@@ -48,6 +49,7 @@ impl GameState {
                 gold: 10,
                 experience: 0,
             })
+            .with(Week { current: 14 })
             .build();
 
         self.ecs.insert(player);
@@ -133,7 +135,6 @@ impl GameState {
                     accepted_quests
                         .insert(entity, accepted_quest)
                         .expect("Cannot accept quest");
-                    godot_print!("Quest inserted!!");
                 }
             }
         }
@@ -179,6 +180,17 @@ impl GameState {
         }
 
         player
+    }
+
+    #[export]
+    fn week(&self, _owner: &Node) -> i32 {
+        let weeks = self.ecs.read_storage::<Week>();
+
+        for week in (weeks).join() {
+            return week.current
+        }
+        
+        0
     }
 }
 

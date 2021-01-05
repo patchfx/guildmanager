@@ -45,4 +45,7 @@ func _process(delta):
 		var q = GameState.current_quests()
 		$TopBar/Quests.text = "Quests: " + str(q.size())
 		
+		var week = GameState.week()
+		$TopBar/Date.text = "Week " + str(week)
+		
 
