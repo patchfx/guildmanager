@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Images/avatar-placeholder.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 03.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 75.9066, 691.55, 411.824, 195.03 )
+
+[node name="Dashboard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 77.0
+margin_right = 1.0
+margin_bottom = -74.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GuildOverview" type="Sprite" parent="."]
+position = Vector2( 224, 105 )
+texture = SubResource( 1 )
+region_rect = Rect2( 451.237, 535.983, 62.1831, 114.799 )
+
+[node name="Avatar" type="Sprite" parent="GuildOverview"]
+position = Vector2( -137.681, -39.3356 )
+scale = Vector2( 0.669432, 0.580662 )
+texture = ExtResource( 2 )
+
+[node name="PlayerName" type="Label" parent="GuildOverview"]
+margin_left = -89.8954
+margin_top = -74.5485
+margin_right = 175.105
+margin_bottom = -48.5485
+text = "FALAKIN PENDRANE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerExperience" type="Label" parent="GuildOverview"]
+margin_left = -89.8954
+margin_top = -54.0222
+margin_right = 175.105
+margin_bottom = -28.0222
+text = "EXPERIENCE: NOVICE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GuildName" type="Label" parent="GuildOverview"]
+margin_left = -177.0
+margin_top = 1.0
+margin_right = 179.0
+margin_bottom = 28.0
+text = "GUILD NAME HERE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GuildRenown" type="Label" parent="GuildOverview"]
+margin_left = -177.0
+margin_top = 24.1674
+margin_right = 179.0
+margin_bottom = 50.1674
+text = "RENOWN: 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CompletedQuests" type="Label" parent="GuildOverview"]
+margin_left = -177.0
+margin_top = 44.6938
+margin_right = 179.0
+margin_bottom = 70.6938
+text = "COMPLETED QUESTS: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 01.png" type="Texture" id=2]
+
+[node name="TopBar" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundBar" type="NinePatchRect" parent="."]
+margin_left = 1.0
+margin_right = 1921.0
+margin_bottom = 71.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 338.062, 516.844, 520.819, 62.0331 )
+patch_margin_left = 69
+patch_margin_top = 17
+patch_margin_right = 68
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="."]
+margin_left = 0.999999
+margin_top = 23.0
+margin_right = 1920.0
+margin_bottom = 49.0
+theme = ExtResource( 1 )
+text = "Week 1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quests" type="Label" parent="."]
+margin_left = 41.0
+margin_top = 17.0
+margin_right = 166.0
+margin_bottom = 57.0
+theme = ExtResource( 1 )
+text = "Quests: 0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gold" type="Label" parent="."]
+margin_left = 1686.0
+margin_top = 19.0
+margin_right = 1866.0
+margin_bottom = 55.0
+theme = ExtResource( 1 )
+text = "Gold: 0"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
