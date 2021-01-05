@@ -24,8 +24,8 @@ __meta__ = {
 
 [node name="BackgroundBar" type="NinePatchRect" parent="TopBar"]
 margin_left = 1.0
-margin_right = 1920.0
-margin_bottom = 50.0
+margin_right = 1921.0
+margin_bottom = 71.0
 texture = ExtResource( 3 )
 region_rect = Rect2( 338.062, 516.844, 520.819, 62.0331 )
 patch_margin_left = 69
@@ -37,9 +37,9 @@ __meta__ = {
 
 [node name="Date" type="Label" parent="TopBar"]
 margin_left = 0.999999
-margin_top = 13.0
+margin_top = 23.0
 margin_right = 1920.0
-margin_bottom = 39.0
+margin_bottom = 49.0
 theme = ExtResource( 2 )
 text = "Week 1"
 align = 1
@@ -49,9 +49,9 @@ __meta__ = {
 
 [node name="Quests" type="Label" parent="TopBar"]
 margin_left = 41.0
-margin_top = 7.0
+margin_top = 17.0
 margin_right = 166.0
-margin_bottom = 47.0
+margin_bottom = 57.0
 theme = ExtResource( 2 )
 text = "Quests: 0"
 valign = 1
@@ -61,9 +61,9 @@ __meta__ = {
 
 [node name="Gold" type="Label" parent="TopBar"]
 margin_left = 1686.0
-margin_top = 9.0
+margin_top = 19.0
 margin_right = 1866.0
-margin_bottom = 45.0
+margin_bottom = 55.0
 theme = ExtResource( 2 )
 text = "Gold: 0"
 align = 2
@@ -75,10 +75,10 @@ __meta__ = {
 [node name="Dashboard" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.657532
-margin_top = 76.5017
-margin_right = 0.657471
-margin_bottom = -1.49829
+margin_left = 1.0
+margin_top = 77.0
+margin_right = 1.0
+margin_bottom = -74.0
 theme = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true,
@@ -86,8 +86,7 @@ __meta__ = {
 }
 
 [node name="GuildOverview" type="Sprite" parent="Dashboard"]
-position = Vector2( 204.949, 106.001 )
-scale = Vector2( 0.89781, 1.07179 )
+position = Vector2( 220, 95 )
 texture = SubResource( 1 )
 region_rect = Rect2( 451.237, 535.983, 62.1831, 114.799 )
 
@@ -142,6 +141,28 @@ margin_top = 44.6938
 margin_right = 179.0
 margin_bottom = 70.6938
 text = "COMPLETED QUESTS: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomBar" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundBar" type="NinePatchRect" parent="BottomBar"]
+margin_left = 1920.0
+margin_top = 1080.0
+margin_right = 3840.0
+margin_bottom = 1151.0
+rect_rotation = 180.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 338.062, 516.844, 520.819, 62.0331 )
+patch_margin_left = 69
+patch_margin_top = 17
+patch_margin_right = 68
 __meta__ = {
 "_edit_use_anchors_": false
 }

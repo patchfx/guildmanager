@@ -40,7 +40,15 @@ impl GameState {
         let dice = Dice {};
         let mut rng = rand::thread_rng();
 
-        let player = self.ecs.create_entity().with(Player { name: player_name, gold: 10, experience: 0 }).build();
+        let player = self
+            .ecs
+            .create_entity()
+            .with(Player {
+                name: player_name,
+                gold: 10,
+                experience: 0,
+            })
+            .build();
 
         self.ecs.insert(player);
 
@@ -157,7 +165,11 @@ impl GameState {
 
     #[export]
     fn player(&self, _owner: &Node) -> Player {
-        let mut player = Player { name: "Falakin Pendrane".into(), gold: 0, experience: 0 };
+        let mut player = Player {
+            name: "Falakin Pendrane".into(),
+            gold: 0,
+            experience: 0,
+        };
         let players = self.ecs.read_storage::<Player>();
 
         for p in (players).join() {
