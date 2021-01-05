@@ -86,7 +86,7 @@ __meta__ = {
 }
 
 [node name="GuildOverview" type="Sprite" parent="Dashboard"]
-position = Vector2( 220, 95 )
+position = Vector2( 224, 105 )
 texture = SubResource( 1 )
 region_rect = Rect2( 451.237, 535.983, 62.1831, 114.799 )
 
