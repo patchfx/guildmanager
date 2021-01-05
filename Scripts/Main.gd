@@ -48,4 +48,6 @@ func _process(delta):
 		var week = GameState.week()
 		$TopBar/Date.text = "Week " + str(week)
 		
-
+		var guild = GameState.guild()
+		$Dashboard/GuildOverview/GuildName.text = guild.name.to_upper()
+		$Dashboard/GuildOverview/GuildRenown.text = "RENOWN: " + str(guild.renown)

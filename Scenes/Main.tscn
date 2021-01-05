@@ -117,9 +117,9 @@ __meta__ = {
 
 [node name="GuildName" type="Label" parent="Dashboard/GuildOverview"]
 margin_left = -177.0
-margin_top = 1.77511
+margin_top = 1.0
 margin_right = 179.0
-margin_bottom = 27.7751
+margin_bottom = 28.0
 text = "GUILD NAME HERE"
 __meta__ = {
 "_edit_use_anchors_": false

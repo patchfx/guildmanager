@@ -11,12 +11,9 @@ pub struct Week {
 #[methods]
 impl Week {
     fn new(_owner: &Node) -> Self {
-      Week {
-            current: 14,
-        }
+        Week { current: 14 }
     }
 
     #[export]
     fn _ready(&self, _owner: &Node) {}
 }
-   

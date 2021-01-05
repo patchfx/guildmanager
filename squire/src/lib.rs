@@ -26,6 +26,7 @@ impl GameState {
         ecs.register::<Quest>();
         ecs.register::<AcceptedQuest>();
         ecs.register::<Week>();
+        ecs.register::<Guild>();
 
         GameState { ecs }
     }
@@ -50,6 +51,10 @@ impl GameState {
                 experience: 0,
             })
             .with(Week { current: 14 })
+            .with(Guild {
+                name: "The Hammerthorn Guild".into(),
+                renown: 0,
+            })
             .build();
 
         self.ecs.insert(player);
@@ -187,10 +192,27 @@ impl GameState {
         let weeks = self.ecs.read_storage::<Week>();
 
         for week in (weeks).join() {
-            return week.current
+            return week.current;
         }
-        
+
         0
+    }
+
+    #[export]
+    fn guild(&self, _owner: &Node) -> Guild {
+        let mut guild = Guild {
+            name: "".into(),
+            renown: 0,
+        };
+        let guilds = self.ecs.read_storage::<Guild>();
+        let player = self.ecs.read_storage::<Player>();
+
+        for (_player, player_guild) in (&player, &guilds).join() {
+            guild.name = player_guild.name.clone();
+            guild.renown = player_guild.renown;
+        }
+
+        guild
     }
 }
 
