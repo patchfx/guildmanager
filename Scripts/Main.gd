@@ -51,3 +51,7 @@ func _process(delta):
 		var guild = GameState.guild()
 		$Dashboard/GuildOverview/GuildName.text = guild.name.to_upper()
 		$Dashboard/GuildOverview/GuildRenown.text = "RENOWN: " + str(guild.renown)
+
+func open_scene(scene_name):
+	$Dashboard.visible = false
+	get_node(scene_name).visible = true
