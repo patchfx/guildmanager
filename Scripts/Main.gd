@@ -71,4 +71,6 @@ func _process(delta):
 
 func open_scene(scene_name):
 	$Dashboard.visible = false
-	get_node(scene_name).visible = true
+	var target_node = get_node(scene_name)
+	target_node.init()
+	target_node.visible = true
