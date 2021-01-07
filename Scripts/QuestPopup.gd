@@ -8,9 +8,9 @@ func _ready():
 
 func init(q):
 	quest = q
-	$TitleText.text = quest.quest_name
+	$TitleText.text = quest.name
 	$BodyText.bbcode_text = quest.description + "\n\n" + "Reward: [color=#dbcd00]" + str(quest.reward) + "g[/color]"
 
 func _on_QuestButton_button_up():
 	get_parent().remove_child(self)
-	GameState.accept_quest(quest.id)
+	GameData.data.player.accepted_quests.push_back(quest.id)

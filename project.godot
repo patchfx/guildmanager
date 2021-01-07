@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GameState="*res://Native/GameState.gdns"
+GameData="*res://Resources/GameData.gd"
 
 [display]
 
