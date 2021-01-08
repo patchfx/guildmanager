@@ -1,12 +1,24 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=2]
 [ext_resource path="res://Scenes/Dashboard.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TopBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/BottomBar.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Hire.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Hire.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/Dashboard.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 04.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 03.png" type="Texture" id=9]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 607.584, 68.5181, 529.416, 608.482 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 505.856, 906.706, 345.301, 186.569 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -46,8 +58,155 @@ text = "HIRE RECRUITS"
 [node name="AvailableRecruits" type="ItemList" parent="Hire"]
 margin_left = 25.0
 margin_top = 40.0
-margin_right = 825.0
+margin_right = 912.0
 margin_bottom = 860.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterOverviewBackground" type="Sprite" parent="Hire"]
+position = Vector2( 1449.23, 445.22 )
+scale = Vector2( 1.68727, 1.35293 )
+texture = SubResource( 1 )
+region_rect = Rect2( 596.5, 59.49, 544, 622 )
+
+[node name="CharacterName" type="Label" parent="Hire"]
+margin_left = 1082.37
+margin_top = 94.8575
+margin_right = 1255.37
+margin_bottom = 120.858
+text = "CHARACTER NAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Hire"]
+position = Vector2( 1244.06, 249.047 )
+scale = Vector2( 0.961459, 1.20955 )
+texture = SubResource( 2 )
+
+[node name="Might" type="Label" parent="Hire"]
+margin_left = 1100.11
+margin_top = 159.0
+margin_right = 1166.11
+margin_bottom = 185.0
+text = "MIGHT:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MightStat" type="Label" parent="Hire"]
+margin_left = 1318.0
+margin_top = 159.0
+margin_right = 1384.0
+margin_bottom = 185.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reflex" type="Label" parent="Hire"]
+margin_left = 1100.11
+margin_top = 189.0
+margin_right = 1176.11
+margin_bottom = 215.0
+text = "REFLEX:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReflexStat" type="Label" parent="Hire"]
+margin_left = 1318.0
+margin_top = 189.0
+margin_right = 1384.0
+margin_bottom = 215.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mind" type="Label" parent="Hire"]
+margin_left = 1100.0
+margin_top = 219.0
+margin_right = 1166.0
+margin_bottom = 245.0
+text = "MIND:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MindStat" type="Label" parent="Hire"]
+margin_left = 1318.0
+margin_top = 219.0
+margin_right = 1384.0
+margin_bottom = 245.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Constitution" type="Label" parent="Hire"]
+margin_left = 1100.0
+margin_top = 249.0
+margin_right = 1250.0
+margin_bottom = 275.0
+text = "CONSTITUTION:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConstitutionStat" type="Label" parent="Hire"]
+margin_left = 1318.0
+margin_top = 249.0
+margin_right = 1384.0
+margin_bottom = 275.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Charisma" type="Label" parent="Hire"]
+margin_left = 1100.0
+margin_top = 279.0
+margin_right = 1206.0
+margin_bottom = 305.0
+text = "CHARISMA:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharismaStat" type="Label" parent="Hire"]
+margin_left = 1318.0
+margin_top = 279.0
+margin_right = 1384.0
+margin_bottom = 305.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="Hire"]
+margin_left = 1100.0
+margin_top = 309.0
+margin_right = 1206.0
+margin_bottom = 335.0
+text = "LEVEL:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelStat" type="Label" parent="Hire"]
+margin_left = 1318.0
+margin_top = 309.0
+margin_right = 1384.0
+margin_bottom = 335.0
+text = "0"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

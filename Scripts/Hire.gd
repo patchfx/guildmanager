@@ -21,4 +21,4 @@ func _on_AvailableRecruits_item_selected(index):
 	
 	for recruit in GameData.data.npcs:
 		if recruit.id == recruit_id:
-			print("Clicked " + recruit.name)
+			$CharacterName.text = recruit.name.to_upper()
