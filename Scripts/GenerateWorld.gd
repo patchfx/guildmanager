@@ -34,5 +34,4 @@ func generate_npcs(initial_population):
 			"level": dice.roll_multiple(1, 10)
 		}
 		GameData.data.npcs.push_back(character)
-		
-		print(character)
+		#print(character)
