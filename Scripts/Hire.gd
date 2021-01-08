@@ -22,3 +22,9 @@ func _on_AvailableRecruits_item_selected(index):
 	for recruit in GameData.data.npcs:
 		if recruit.id == recruit_id:
 			$CharacterName.text = recruit.name.to_upper()
+			$MightStat.text = str(recruit.might)
+			$ReflexStat.text = str(recruit.reflex)
+			$MindStat.text = str(recruit.mind)
+			$ConstitutionStat.text = str(recruit.constitution)
+			$CharismaStat.text = str(recruit.charisma)
+			$LevelStat.text = str(recruit.level)

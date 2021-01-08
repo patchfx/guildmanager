@@ -80,7 +80,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Hire"]
+[node name="StatsBackground" type="Sprite" parent="Hire"]
 position = Vector2( 1244.06, 249.047 )
 scale = Vector2( 0.961459, 1.20955 )
 texture = SubResource( 2 )
