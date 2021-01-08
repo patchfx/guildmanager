@@ -12,3 +12,5 @@ func init():
 			$AvailableRecruits.add_item(recruit.name)
 			available_recruits.push_back(recruit.id)
 
+func update_ui():
+	pass

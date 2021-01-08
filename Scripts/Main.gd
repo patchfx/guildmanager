@@ -19,7 +19,6 @@ func _ready():
 	
 	print("Generating done")
 
-		
 	var quests = GameData.data.quests
 
 	for q in quests:
@@ -39,6 +38,8 @@ func _process(delta):
 
 func open_scene(scene_name):
 	$Dashboard.visible = false
+	$Hire.visible = false
 	var target_node = get_node(scene_name)
 	target_node.init()
 	target_node.visible = true
+	active_scene = scene_name

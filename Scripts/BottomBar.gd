@@ -11,3 +11,7 @@ func _on_HireButton_button_up():
 
 func _on_ContinueButton_button_up():
 	get_parent().open_scene("Continue")
+
+
+func _on_DashboardButton_button_up():
+	get_parent().open_scene("Dashboard")

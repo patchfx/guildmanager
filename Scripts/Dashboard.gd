@@ -11,6 +11,8 @@ func _ready():
 	pass # Replace with function body.
 	
 
+func init():
+	pass
 
 func update_ui():
 	var guild = GameData.data.player.guild

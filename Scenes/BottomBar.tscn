@@ -31,9 +31,9 @@ __meta__ = {
 }
 
 [node name="HireButton" type="TextureButton" parent="."]
-margin_left = 882.0
+margin_left = 239.0
 margin_top = 996.0
-margin_right = 1087.0
+margin_right = 444.0
 margin_bottom = 1064.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
@@ -56,10 +56,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ContinueButton" type="TextureButton" parent="."]
-margin_left = 1690.0
+[node name="DashboardButton" type="TextureButton" parent="."]
+margin_left = 23.0
 margin_top = 996.0
-margin_right = 1895.0
+margin_right = 228.0
+margin_bottom = 1064.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 4 )
+texture_focused = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="DashboardButton"]
+margin_left = 17.0594
+margin_top = 18.0
+margin_right = 191.059
+margin_bottom = 53.0
+text = "DASHBOARD"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueButton" type="TextureButton" parent="."]
+margin_left = 1692.0
+margin_top = 996.0
+margin_right = 1897.0
 margin_bottom = 1064.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
@@ -82,4 +108,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_up" from="HireButton" to="." method="_on_HireButton_button_up"]
+[connection signal="button_up" from="DashboardButton" to="." method="_on_DashboardButton_button_up"]
 [connection signal="button_up" from="ContinueButton" to="." method="_on_ContinueButton_button_up"]
