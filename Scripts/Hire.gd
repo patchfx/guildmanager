@@ -28,3 +28,13 @@ func _on_AvailableRecruits_item_selected(index):
 			$ConstitutionStat.text = str(recruit.constitution)
 			$CharismaStat.text = str(recruit.charisma)
 			$LevelStat.text = str(recruit.level)
+			
+			var total_stats = recruit.might + recruit.reflex + recruit.mind + recruit.constitution + recruit.charisma
+			var hire_cost = total_stats / 10 * recruit.level
+			$HireCost.text = str(hire_cost) + "g"
+			if GameData.data.player.gold < hire_cost:
+				$HireRecruit.disabled = true
+				$HireRecruit.hint_tooltip = "Insufficient Gold"
+			else:
+				$HireRecruit.disabled = false
+				$HireRecruit.hint_tooltip = "Hire Recruit"

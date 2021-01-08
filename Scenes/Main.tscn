@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scripts/Dashboard.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 04.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 03.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Themes/button_active.tres" type="Texture" id=10]
+[ext_resource path="res://Assets/Themes/button_normal.tres" type="Texture" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -48,12 +50,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Hire"]
+[node name="HireRecruits" type="Label" parent="Hire"]
 margin_left = 25.1694
 margin_top = 10.5681
 margin_right = 170.0
 margin_bottom = 36.5681
 text = "HIRE RECRUITS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AvailableRecruits" type="ItemList" parent="Hire"]
 margin_left = 25.0
@@ -65,8 +70,8 @@ __meta__ = {
 }
 
 [node name="CharacterOverviewBackground" type="Sprite" parent="Hire"]
-position = Vector2( 1449.23, 445.22 )
-scale = Vector2( 1.68727, 1.35293 )
+position = Vector2( 1449.23, 450.392 )
+scale = Vector2( 1.68727, 1.36994 )
 texture = SubResource( 1 )
 region_rect = Rect2( 596.5, 59.49, 544, 622 )
 
@@ -81,7 +86,7 @@ __meta__ = {
 }
 
 [node name="StatsBackground" type="Sprite" parent="Hire"]
-position = Vector2( 1244.06, 249.047 )
+position = Vector2( 1244, 249 )
 scale = Vector2( 0.961459, 1.20955 )
 texture = SubResource( 2 )
 
@@ -210,4 +215,71 @@ align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HireCostLabel" type="Label" parent="Hire"]
+margin_left = 1085.69
+margin_top = 763.956
+margin_right = 1195.69
+margin_bottom = 789.956
+text = "HIRE COST:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HireCost" type="Label" parent="Hire"]
+margin_left = 1215.0
+margin_top = 764.0
+margin_right = 1284.0
+margin_bottom = 790.0
+custom_colors/font_color = Color( 0.870588, 0.815686, 0.0235294, 1 )
+text = "0g"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HistoryLabel" type="Label" parent="Hire"]
+margin_left = 1082.27
+margin_top = 400.102
+margin_right = 1192.27
+margin_bottom = 426.102
+text = "HISTORY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HistoryText" type="RichTextLabel" parent="Hire"]
+margin_left = 1082.0
+margin_top = 430.0
+margin_right = 1812.0
+margin_bottom = 716.0
+bbcode_enabled = true
+bbcode_text = "HISTORY TEXT"
+text = "HISTORY TEXT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HireRecruit" type="TextureButton" parent="Hire"]
+margin_left = 1612.9
+margin_top = 737.388
+margin_right = 1817.9
+margin_bottom = 805.388
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
+texture_disabled = ExtResource( 11 )
+texture_focused = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hire" type="Label" parent="Hire/HireRecruit"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 191.0
+margin_bottom = 54.0
+text = "HIRE RECRUIT"
+align = 1
+valign = 1
 [connection signal="item_selected" from="Hire/AvailableRecruits" to="Hire" method="_on_AvailableRecruits_item_selected"]
