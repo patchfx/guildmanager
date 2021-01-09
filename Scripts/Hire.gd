@@ -15,6 +15,7 @@ func init():
 		if recruit.level == GameData.data.player.guild.renown and !GameData.data.player.guild.recruits.has(id):
 			$AvailableRecruits.add_item(recruit.name)
 			available_recruits.push_back(recruit.id)
+	$AvailableRecruits.select(0)
 	_on_AvailableRecruits_item_selected(0)
 
 
