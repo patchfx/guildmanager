@@ -38,3 +38,7 @@ func _on_AvailableRecruits_item_selected(index):
 			else:
 				$HireRecruit.disabled = false
 				$HireRecruit.hint_tooltip = "Hire Recruit"
+
+
+func _on_HireRecruit_button_up():
+	print("Hire a recruit")

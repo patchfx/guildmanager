@@ -282,4 +282,8 @@ margin_bottom = 54.0
 text = "HIRE RECRUIT"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="item_selected" from="Hire/AvailableRecruits" to="Hire" method="_on_AvailableRecruits_item_selected"]
+[connection signal="button_up" from="Hire/HireRecruit" to="Hire" method="_on_HireRecruit_button_up"]
