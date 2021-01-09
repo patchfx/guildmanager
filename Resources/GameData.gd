@@ -26,5 +26,5 @@ var data = {
 	"locations": [
 		{ "id": 0, "name": "Blackspell", "max_population": 30 }
 	],
-	"npcs": []
+	"npcs": {}
 }

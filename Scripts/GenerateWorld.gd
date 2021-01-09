@@ -22,8 +22,9 @@ func generate_npcs(initial_population):
 	for x in range(0,initial_population):
 		var first_name = populated_list[randi()%(populated_list.size() - 1) + 1]
 		var last_name = populated_list[randi()%(populated_list.size() - 1) + 1]
+		var id = uuid.v4()
 		var character = {
-			"id": uuid.v4(),
+			"id": id,
 			"name": first_name + " " + last_name,
 			"might": dice.roll_multiple(3,6),
 			"reflex": dice.roll_multiple(3,6),
@@ -33,5 +34,6 @@ func generate_npcs(initial_population):
 			"xp": 0,
 			"level": dice.roll_multiple(1, 10)
 		}
-		GameData.data.npcs.push_back(character)
-		#print(character)
+		GameData.data.npcs[id] = character
+	
+	print(GameData.data.npcs)

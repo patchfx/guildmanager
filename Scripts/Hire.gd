@@ -9,7 +9,8 @@ func _ready():
 
 func init():
 	available_recruits = []
-	for recruit in GameData.data.npcs:
+	for id in GameData.data.npcs:
+		var recruit = GameData.data.npcs[id]
 		if recruit.level == GameData.data.player.guild.renown:
 			$AvailableRecruits.add_item(recruit.name)
 			available_recruits.push_back(recruit.id)
@@ -21,8 +22,9 @@ func _on_AvailableRecruits_item_selected(index):
 	selected_index = index
 	var recruit_id = available_recruits[index]
 	
-	for recruit in GameData.data.npcs:
-		if recruit.id == recruit_id:
+	for id in GameData.data.npcs:
+		if id == recruit_id:
+			var recruit = GameData.data.npcs[id]
 			$CharacterName.text = recruit.name.to_upper()
 			$MightStat.text = str(recruit.might)
 			$ReflexStat.text = str(recruit.reflex)
@@ -42,9 +44,10 @@ func _on_AvailableRecruits_item_selected(index):
 
 
 func _on_HireRecruit_button_up():
-	var id = available_recruits[selected_index]
-	for recruit in GameData.data.npcs:
-		if recruit.id == id:
+	var recruit_id = available_recruits[selected_index]
+	for id in GameData.data.npcs:
+		if id == recruit_id:
+			var recruit = GameData.data.npcs[id]
 			var hire_cost = _hire_cost_for(recruit)
 			GameData.data.player.guild.recruits.push_back(id)
 			GameData.data.player.gold -= hire_cost
