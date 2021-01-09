@@ -9,11 +9,14 @@ func _ready():
 
 func init():
 	available_recruits = []
+	$AvailableRecruits.clear()
 	for id in GameData.data.npcs:
 		var recruit = GameData.data.npcs[id]
-		if recruit.level == GameData.data.player.guild.renown:
+		if recruit.level == GameData.data.player.guild.renown and !GameData.data.player.guild.recruits.has(id):
 			$AvailableRecruits.add_item(recruit.name)
 			available_recruits.push_back(recruit.id)
+	_on_AvailableRecruits_item_selected(0)
+
 
 func update_ui():
 	pass
@@ -36,12 +39,9 @@ func _on_AvailableRecruits_item_selected(index):
 			var hire_cost = _hire_cost_for(recruit)
 			$HireCost.text = str(hire_cost) + "g"
 			if GameData.data.player.gold < hire_cost:
-				$HireRecruit.disabled = true
-				$HireRecruit.hint_tooltip = "Insufficient Gold"
+				$HireRecruit.visible = false
 			else:
-				$HireRecruit.disabled = false
-				$HireRecruit.hint_tooltip = "Hire Recruit"
-
+				$HireRecruit.visible = true
 
 func _on_HireRecruit_button_up():
 	var recruit_id = available_recruits[selected_index]
@@ -51,6 +51,8 @@ func _on_HireRecruit_button_up():
 			var hire_cost = _hire_cost_for(recruit)
 			GameData.data.player.guild.recruits.push_back(id)
 			GameData.data.player.gold -= hire_cost
+			$HireRecruit.visible = false
+			init()
 
 func _hire_cost_for(recruit):
 	var total_stats = recruit.might + recruit.reflex + recruit.mind + recruit.constitution + recruit.charisma
