@@ -11,7 +11,8 @@ var data = {
 		"completed_quests": [],
 		"guild": {
 			"name": "The Hammerthorns",
-			"renown": 1
+			"renown": 1,
+			"recruits": []
 		}
 	},
 	"quests": [{

@@ -1,6 +1,7 @@
 extends Control
 
 var available_recruits = []
+var selected_index = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +18,7 @@ func update_ui():
 	pass
 
 func _on_AvailableRecruits_item_selected(index):
+	selected_index = index
 	var recruit_id = available_recruits[index]
 	
 	for recruit in GameData.data.npcs:
@@ -29,8 +31,7 @@ func _on_AvailableRecruits_item_selected(index):
 			$CharismaStat.text = str(recruit.charisma)
 			$LevelStat.text = str(recruit.level)
 			
-			var total_stats = recruit.might + recruit.reflex + recruit.mind + recruit.constitution + recruit.charisma
-			var hire_cost = total_stats / 10 * recruit.level
+			var hire_cost = _hire_cost_for(recruit)
 			$HireCost.text = str(hire_cost) + "g"
 			if GameData.data.player.gold < hire_cost:
 				$HireRecruit.disabled = true
@@ -41,4 +42,14 @@ func _on_AvailableRecruits_item_selected(index):
 
 
 func _on_HireRecruit_button_up():
-	print("Hire a recruit")
+	var id = available_recruits[selected_index]
+	for recruit in GameData.data.npcs:
+		if recruit.id == id:
+			var hire_cost = _hire_cost_for(recruit)
+			GameData.data.player.guild.recruits.push_back(id)
+			GameData.data.player.gold -= hire_cost
+
+func _hire_cost_for(recruit):
+	var total_stats = recruit.might + recruit.reflex + recruit.mind + recruit.constitution + recruit.charisma
+	var hire_cost = total_stats / 10 * recruit.level
+	return(hire_cost)
