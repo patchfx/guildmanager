@@ -27,6 +27,7 @@ func _ready():
 		add_child(popup)
 
 	loaded = true
+	open_scene(active_scene)
 
 func _process(delta):
 	if loaded:
