@@ -18,9 +18,11 @@ func generate():
 
 	for x in range(0, 25):
 		generate_npcs(npcs_to_generate)
+		generate_history()
 		GameData.data.year += 1
 		
 	for x in range(0, 18):
+		generate_history()
 		GameData.data.year += 1
 	
 	npcs.shuffle()
@@ -52,3 +54,6 @@ func generate_npcs(initial_population):
 			"history": ["Born in the year " + str(GameData.data.year)]
 		}
 		npcs.push_back(character)
+
+func generate_history():
+	pass
