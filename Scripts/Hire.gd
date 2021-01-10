@@ -36,6 +36,11 @@ func _on_AvailableRecruits_item_selected(index):
 			$ConstitutionStat.text = str(recruit.constitution)
 			$CharismaStat.text = str(recruit.charisma)
 			$LevelStat.text = str(recruit.level)
+			var history = ""
+			
+			for historical in recruit.history:
+				history = historical + "\n"
+			$HistoryText.bbcode_text = history
 			
 			var hire_cost = _hire_cost_for(recruit)
 			$HireCost.text = str(hire_cost) + "g"

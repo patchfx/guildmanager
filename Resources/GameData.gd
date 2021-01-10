@@ -2,7 +2,7 @@ extends Node
 
 var data = {
 	"week": 1,
-	"year": 768,
+	"year": 738,
 	"player": {
 		"name": "Falakin Pendrane",
 		"gold": 10,
@@ -26,5 +26,19 @@ var data = {
 	"locations": [
 		{ "id": 0, "name": "Blackspell", "max_population": 30 }
 	],
-	"npcs": {}
+	"npcs": {},
+	"factions": [
+		{
+			"id": "",
+			"name": "Paviland",
+			"locations": [],
+			"leader": ""
+		},
+		{
+			"id": "",
+			"name": "Gael Riata",
+			"locations": [],
+			"leader": ""
+		}
+	]
 }
