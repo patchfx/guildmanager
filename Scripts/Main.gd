@@ -40,6 +40,7 @@ func _process(delta):
 func open_scene(scene_name):
 	$Dashboard.visible = false
 	$Hire.visible = false
+	$Continue.visible = false
 	var target_node = get_node(scene_name)
 	target_node.init()
 	target_node.visible = true

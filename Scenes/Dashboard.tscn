@@ -22,62 +22,77 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GuildOverview" type="Sprite" parent="."]
-position = Vector2( 224, 105 )
+[node name="GuildOverview" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="GuildBackground" type="Sprite" parent="GuildOverview"]
+position = Vector2( 280.936, 132.719 )
+scale = Vector2( 1.27706, 1.28429 )
 texture = SubResource( 1 )
 region_rect = Rect2( 451.237, 535.983, 62.1831, 114.799 )
 
 [node name="Avatar" type="Sprite" parent="GuildOverview"]
-position = Vector2( -137.681, -39.3356 )
+position = Vector2( 86.319, 65.6644 )
 scale = Vector2( 0.669432, 0.580662 )
 texture = ExtResource( 2 )
 
 [node name="PlayerName" type="Label" parent="GuildOverview"]
-margin_left = -89.8954
-margin_top = -74.5485
-margin_right = 175.105
-margin_bottom = -48.5485
+margin_left = 134.105
+margin_top = 30.4515
+margin_right = 399.105
+margin_bottom = 56.4515
 text = "FALAKIN PENDRANE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PlayerExperience" type="Label" parent="GuildOverview"]
-margin_left = -89.8954
-margin_top = -54.0222
-margin_right = 175.105
-margin_bottom = -28.0222
+margin_left = 134.105
+margin_top = 50.9778
+margin_right = 399.105
+margin_bottom = 76.9778
 text = "EXPERIENCE: NOVICE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GuildName" type="Label" parent="GuildOverview"]
-margin_left = -177.0
-margin_top = 1.0
-margin_right = 179.0
-margin_bottom = 28.0
+margin_left = 47.0
+margin_top = 105.0
+margin_right = 403.0
+margin_bottom = 132.0
 text = "GUILD NAME HERE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GuildRenown" type="Label" parent="GuildOverview"]
-margin_left = -177.0
-margin_top = 24.1674
-margin_right = 179.0
-margin_bottom = 50.1674
+margin_left = 47.0
+margin_top = 135.0
+margin_right = 403.0
+margin_bottom = 161.0
 text = "RENOWN: 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CompletedQuests" type="Label" parent="GuildOverview"]
-margin_left = -177.0
-margin_top = 44.6938
-margin_right = 179.0
-margin_bottom = 70.6938
+margin_left = 47.0
+margin_top = 165.0
+margin_right = 403.0
+margin_bottom = 191.0
 text = "COMPLETED QUESTS: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RecruitsCount" type="Label" parent="GuildOverview"]
+margin_left = 47.749
+margin_top = 195.0
+margin_right = 403.749
+margin_bottom = 221.0
+text = "RECRUITS: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }

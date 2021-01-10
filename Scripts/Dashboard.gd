@@ -44,3 +44,5 @@ func update_ui():
 		$GuildOverview/PlayerExperience.text = "EXPERIENCE: EXPERT"
 	elif player.experience < 50000:
 		$GuildOverview/PlayerExperience.text = "EXPERIENCE: MASTER"
+	
+	$GuildOverview/RecruitsCount.text = "RECRUITS: " + str(GameData.data.player.guild.recruits.size())

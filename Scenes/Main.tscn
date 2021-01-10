@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Themes/button_normal.tres" type="Texture" id=11]
 [ext_resource path="res://Assets/Themes/button_disabled.tres" type="Texture" id=12]
 [ext_resource path="res://Scripts/TopBar.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Continue.gd" type="Script" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -40,6 +41,7 @@ script = ExtResource( 7 )
 [node name="BottomBar" parent="." instance=ExtResource( 5 )]
 
 [node name="Hire" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
@@ -288,5 +290,21 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Continue" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 2 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Continue"]
+margin_left = 122.0
+margin_top = 220.0
+margin_right = 190.0
+margin_bottom = 234.0
+text = "CONTINUE"
 [connection signal="item_selected" from="Hire/AvailableRecruits" to="Hire" method="_on_AvailableRecruits_item_selected"]
 [connection signal="button_up" from="Hire/HireRecruit" to="Hire" method="_on_HireRecruit_button_up"]
