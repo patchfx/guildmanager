@@ -102,6 +102,8 @@ func generate():
 		generate_npcs(npcs_to_generate)
 		generate_years_history()
 		GameData.data.year += 1
+	
+	add_faction_leaders()
 		
 	for x in range(0, 18):
 		generate_years_history()
@@ -111,6 +113,7 @@ func generate():
 	
 	for npc in npcs:
 		GameData.data.npcs[npc.id] = npc
+
 
 func load_quests():
 	for quest in GameData.data.quests:
@@ -142,6 +145,7 @@ func generate_npcs(initial_population):
 			"xp": 0,
 			"level": dice.roll_multiple(1, 10),
 			"traits": {},
+			"recruitable": true,
 			"history": ["Born in the year " + str(GameData.data.year)]
 		}
 		
@@ -155,6 +159,14 @@ func generate_npcs(initial_population):
 		character.traits["conformity"] = conformity[randi()%(conformity.size()) - 1]
 	
 		npcs.push_back(character)
+
+func add_faction_leaders():
+	var candidates = []
+	for faction in GameData.data.factions:
+		var leader = npcs[randi()%(npcs.size() - 1)]
+		leader.recruitable = false
+		leader.history.push_back("Appointed leader of the " + faction.name + " faction")
+		faction.leader = leader.id
 
 func generate_years_history():
 	pass
