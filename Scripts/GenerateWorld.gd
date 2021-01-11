@@ -21,10 +21,9 @@ func generate():
 	add_faction_leaders()
 		
 	for _x in range(0, 18):
+		generate_npcs(npcs_to_generate)
 		generate_years_history()
 		GameData.data.year += 1
-	
-	add_npcs_to_factions()
 
 	npcs.shuffle()
 	
@@ -45,6 +44,7 @@ func generate_npcs(initial_population):
 		var id = uuid.v4()
 		var character = {
 			"id": id,
+			"age": 0,
 			"name": first_name + " " + last_name,
 			"might": dice.roll_multiple(3,6),
 			"reflex": dice.roll_multiple(3,6),
@@ -55,6 +55,7 @@ func generate_npcs(initial_population):
 			"level": dice.roll_multiple(1, 10),
 			"traits": {},
 			"recruitable": true,
+			"faction": "",
 			"history": ["Born in the year " + str(GameData.data.year)]
 		}
 		
@@ -73,11 +74,12 @@ func add_faction_leaders():
 
 func add_npcs_to_factions():
 	for npc in npcs:
-		if npc.recruitable:
+		if npc.recruitable and npc.faction.empty() and npc.age == 18:
 			var faction = GameData.data.factions[randi()%(GameData.data.factions.size() - 1)]
 			npc.faction = faction.id
 			npc.history.push_back("Sworn into the service of " + faction.name)
-
 			
 func generate_years_history():
-	pass
+	add_npcs_to_factions()
+	for npc in npcs:
+		npc.age += 1

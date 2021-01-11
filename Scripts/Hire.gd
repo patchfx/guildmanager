@@ -12,7 +12,7 @@ func init():
 	$AvailableRecruits.clear()
 	for id in GameData.data.npcs:
 		var recruit = GameData.data.npcs[id]
-		if recruit.recruitable and recruit.level == GameData.data.player.guild.renown and !GameData.data.player.guild.recruits.has(id):
+		if recruit.age >= 19 and recruit.recruitable and recruit.level == GameData.data.player.guild.renown and !GameData.data.player.guild.recruits.has(id):
 			$AvailableRecruits.add_item(recruit.name)
 			available_recruits.push_back(recruit.id)
 	$AvailableRecruits.select(0)
