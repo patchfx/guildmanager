@@ -3,94 +3,9 @@ extends Node
 var dice = preload("res://Scripts/Dice.gd").new()
 var uuid = preload("res://Scripts/UUID.gd").new()
 var name_generator = preload("res://Scripts/NameGenerator.gd").new()
+var personality_traits = preload("res://Scripts/PersonalityTraits.gd").new()
 
 var npcs = []
-enum Motivator {
-	ACHIEVEMENT,
-	ACQUISITION,
-	ADORATION,
-	PEACE,
-	BENEFICENCE,
-	CHAOS,
-	COMPETITION,
-	CONFLICT,
-	CONQUEST,
-	CORRUPTION,
-	CREATION,
-	DESTRUCTION,
-	DISCOVERY,
-	DOMESTICITY,
-	EDUCATION,
-	ENTERTAINMENT,
-	ENSLAVEMENT,
-	HEDONISM,
-	HEROISM,
-	HONOR,
-	LIBERATION,
-	LOVE,
-	ORDER,
-	PLAY,
-	POWER,
-	PROSELYTIZATION,
-	PURITY,
-	REBELLION,
-	RECOGNITION,
-	SERVICE,
-	TORMENT,
-	UNDERSTANDING,
-	VICE
-}
-
-enum Disposition {
-	JOYFUL,
-	ANXIOUS,
-	ANGRY,
-	CONTEMPTUOUS,
-	EXCITED,
-	CURIOUS,
-	APATHETIC,
-	CALM,
-	ASHAMED
-}
-
-enum Outlook {
-	OPTMISTIC,
-	PESSIMISTIC
-}
-
-enum Integrity {
-	Conscientious,
-	Unscrupulous
-}
-
-enum Impulsiveness {
-	Controlled,
-	Spontaneous
-}
-
-enum Boldness {
-	Intrepid,
-	Cautious
-}
-
-enum Agreeableness {
-	Agreeable,
-	Disagreeable
-}
-
-enum Interactivity {
-	Engaging,
-	Reserved
-}
-
-enum Conformity {
-	Conventional,
-	Heterodox
-}
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
 
 func generate():
 	randomize()
@@ -109,6 +24,8 @@ func generate():
 		generate_years_history()
 		GameData.data.year += 1
 	
+	add_npcs_to_factions()
+
 	npcs.shuffle()
 	
 	for npc in npcs:
@@ -121,15 +38,7 @@ func load_quests():
 
 func generate_npcs(initial_population):
 	var populated_list = name_generator.load()
-	var motivators = Motivator.keys()
-	var disposition = Disposition.keys()
-	var impulsiveness = Impulsiveness.keys()
-	var boldness = Boldness.keys()
-	var outlook = Outlook.keys()
-	var integrity = Integrity.keys()
-	var interactivity = Interactivity.keys()
-	var conformity = Conformity.keys()
-	
+
 	for _x in range(0,initial_population):
 		var first_name = populated_list[randi()%(populated_list.size() - 1) + 1]
 		var last_name = populated_list[randi()%(populated_list.size() - 1) + 1]
@@ -149,24 +58,26 @@ func generate_npcs(initial_population):
 			"history": ["Born in the year " + str(GameData.data.year)]
 		}
 		
-		character.traits["motivator"] = motivators[randi()%(motivators.size()) - 1]
-		character.traits["disposition"] = disposition[randi()%(disposition.size() - 1) - 1]
-		character.traits["outlook"] = outlook[randi()%(outlook.size()) - 1]
-		character.traits["impulsiveness"] = impulsiveness[randi()%(impulsiveness.size()) - 1]
-		character.traits["boldness"] = boldness[randi()%(boldness.size()) - 1]
-		character.traits["integrity"] = integrity[randi()%(integrity.size()) - 1]
-		character.traits["interactivity"] = interactivity[randi()%(interactivity.size()) - 1]
-		character.traits["conformity"] = conformity[randi()%(conformity.size()) - 1]
-	
+		personality_traits.add_personality_traits_to(character)
+		
 		npcs.push_back(character)
 
 func add_faction_leaders():
-
 	for faction in GameData.data.factions:
+		faction.id = uuid.v4()
 		var leader = npcs[randi()%(npcs.size() - 1)]
 		leader.recruitable = false
+		leader.faction = faction.id
 		leader.history.push_back("Appointed leader of the " + faction.name + " faction")
 		faction.leader = leader.id
 
+func add_npcs_to_factions():
+	for npc in npcs:
+		if npc.recruitable:
+			var faction = GameData.data.factions[randi()%(GameData.data.factions.size() - 1)]
+			npc.faction = faction.id
+			npc.history.push_back("Sworn into the service of " + faction.name)
+
+			
 func generate_years_history():
 	pass

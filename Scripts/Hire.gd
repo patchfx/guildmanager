@@ -39,7 +39,8 @@ func _on_AvailableRecruits_item_selected(index):
 			var history = ""
 			
 			for historical in recruit.history:
-				history = historical + "\n"
+				history = history + historical + "\n"
+			print(history)
 			$HistoryText.bbcode_text = history
 			
 			var hire_cost = _hire_cost_for(recruit)
