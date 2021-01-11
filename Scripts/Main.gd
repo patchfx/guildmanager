@@ -29,7 +29,7 @@ func _ready():
 	loaded = true
 	open_scene(active_scene)
 
-func _process(delta):
+func _process(_delta):
 	if loaded:
 		var q = GameData.data.player.accepted_quests
 		$TopBar/Gold.text = "GOLD: " + str(GameData.data.player.gold)

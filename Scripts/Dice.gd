@@ -13,7 +13,7 @@ func _ready():
 func roll_multiple(rolls, sides):
 	var total = 0
 	
-	for x in range(0, rolls):
+	for _x in range(0, rolls):
 		total += randi()%sides+1
 	
 	return(total)

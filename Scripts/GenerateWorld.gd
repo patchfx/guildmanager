@@ -98,14 +98,14 @@ func generate():
 	var years_with_population = 25
 	var npcs_to_generate = 200
 
-	for x in range(0, 25):
+	for _x in range(0, years_with_population):
 		generate_npcs(npcs_to_generate)
 		generate_years_history()
 		GameData.data.year += 1
 	
 	add_faction_leaders()
 		
-	for x in range(0, 18):
+	for _x in range(0, 18):
 		generate_years_history()
 		GameData.data.year += 1
 	
@@ -130,7 +130,7 @@ func generate_npcs(initial_population):
 	var interactivity = Interactivity.keys()
 	var conformity = Conformity.keys()
 	
-	for x in range(0,initial_population):
+	for _x in range(0,initial_population):
 		var first_name = populated_list[randi()%(populated_list.size() - 1) + 1]
 		var last_name = populated_list[randi()%(populated_list.size() - 1) + 1]
 		var id = uuid.v4()
@@ -161,7 +161,7 @@ func generate_npcs(initial_population):
 		npcs.push_back(character)
 
 func add_faction_leaders():
-	var candidates = []
+
 	for faction in GameData.data.factions:
 		var leader = npcs[randi()%(npcs.size() - 1)]
 		leader.recruitable = false

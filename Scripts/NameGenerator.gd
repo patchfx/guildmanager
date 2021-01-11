@@ -14,17 +14,17 @@ var markov = {}
 
 func load():
 	randomize()
-	loadNames(markov, names)
+	loadNames()
 	var populated_list = []
 	var new_name = ""
-	for i in range(2000):
+	for _i in range(2000):
 		var random_letter = alphabet[roll(0, alphabet.size()-1)]
 		new_name = getName(random_letter, 4, 7)
 		new_name = new_name.capitalize()
 		populated_list.push_back(new_name)
 	return(populated_list)
 
-func loadNames(markov, names):
+func loadNames():
 	for name in names:
 		var currName = name
 		for i in range(currName.length()):
