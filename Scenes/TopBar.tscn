@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 01.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/GameMenu.gd" type="Script" id=3]
 
 [node name="TopBar" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -1004.0
+theme = ExtResource( 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -36,18 +38,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quests" type="Label" parent="."]
-margin_left = 41.0
-margin_top = 17.0
-margin_right = 166.0
-margin_bottom = 57.0
-theme = ExtResource( 1 )
-text = "Quests: 0"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Gold" type="Label" parent="."]
 margin_left = 1686.0
 margin_top = 19.0
@@ -57,6 +47,17 @@ theme = ExtResource( 1 )
 text = "Gold: 0"
 align = 2
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameMenu" type="MenuButton" parent="."]
+margin_left = 37.8554
+margin_top = 21.5565
+margin_right = 208.855
+margin_bottom = 53.5565
+text = "GUILD MANAGER"
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

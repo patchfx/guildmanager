@@ -31,10 +31,8 @@ func _ready():
 
 func _process(_delta):
 	if loaded:
-		var q = GameData.data.player.accepted_quests
-		$TopBar/Gold.text = "GOLD: " + str(GameData.data.player.gold)
-		$TopBar/Quests.text = "Quests: " + str(q.size())
-		$TopBar/Date.text = "Week " + str(GameData.data.week)
+
+		get_node("TopBar").update_ui()
 		get_node(active_scene).update_ui()
 
 func open_scene(scene_name):

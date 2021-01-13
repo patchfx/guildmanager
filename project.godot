@@ -19,6 +19,7 @@ config/name="Guild Manager"
 run/main_scene="res://Scenes/Main.tscn"
 boot_splash/image="res://Assets/Images/patchfx_DAP_rev1_trnsprnt.png"
 boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]

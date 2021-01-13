@@ -10,7 +10,6 @@ extends Control
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	$Date.text = "Week " + str(GameData.data.week) + " in the year " + str(GameData.data.year)
+func update_ui():
+	$Gold.text = "GOLD: " + str(GameData.data.player.gold)
+	$Date.text = "Week " + str(GameData.data.week)
