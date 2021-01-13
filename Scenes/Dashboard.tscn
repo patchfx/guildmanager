@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Images/avatar-placeholder.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 03.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Themes/header_font.tres" type="DynamicFont" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -25,74 +26,132 @@ __meta__ = {
 [node name="GuildOverview" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GuildBackground" type="Sprite" parent="GuildOverview"]
-position = Vector2( 280.936, 132.719 )
+position = Vector2( 280, 131 )
 scale = Vector2( 1.27706, 1.28429 )
 texture = SubResource( 1 )
 region_rect = Rect2( 451.237, 535.983, 62.1831, 114.799 )
 
+[node name="FinancialOverview" type="Sprite" parent="GuildOverview"]
+position = Vector2( 1635, 132 )
+scale = Vector2( 1.27706, 1.28429 )
+texture = SubResource( 1 )
+region_rect = Rect2( 451.237, 535.983, 62.1831, 114.799 )
+
+[node name="GuildOverview" type="Sprite" parent="GuildOverview"]
+position = Vector2( 960, 132 )
+scale = Vector2( 1.60729, 1.28429 )
+texture = SubResource( 1 )
+region_rect = Rect2( 451.237, 535.983, 62.1831, 114.799 )
+
 [node name="Avatar" type="Sprite" parent="GuildOverview"]
-position = Vector2( 86.319, 65.6644 )
+position = Vector2( 91.319, 71.6644 )
 scale = Vector2( 0.669432, 0.580662 )
 texture = ExtResource( 2 )
 
 [node name="PlayerName" type="Label" parent="GuildOverview"]
-margin_left = 134.105
-margin_top = 30.4515
-margin_right = 399.105
-margin_bottom = 56.4515
+margin_left = 138.105
+margin_top = 40.4515
+margin_right = 403.105
+margin_bottom = 66.4515
 text = "FALAKIN PENDRANE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PlayerExperience" type="Label" parent="GuildOverview"]
-margin_left = 134.105
-margin_top = 50.9778
-margin_right = 399.105
-margin_bottom = 76.9778
+margin_left = 139.105
+margin_top = 74.9778
+margin_right = 404.105
+margin_bottom = 100.978
 text = "EXPERIENCE: NOVICE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GuildName" type="Label" parent="GuildOverview"]
-margin_left = 47.0
-margin_top = 105.0
-margin_right = 403.0
-margin_bottom = 132.0
-text = "GUILD NAME HERE"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="GuildRenown" type="Label" parent="GuildOverview"]
-margin_left = 47.0
-margin_top = 135.0
-margin_right = 403.0
-margin_bottom = 161.0
+margin_left = 52.0
+margin_top = 119.0
+margin_right = 408.0
+margin_bottom = 145.0
 text = "RENOWN: 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CompletedQuests" type="Label" parent="GuildOverview"]
-margin_left = 47.0
-margin_top = 165.0
-margin_right = 403.0
-margin_bottom = 191.0
+margin_left = 52.0
+margin_top = 156.0
+margin_right = 408.0
+margin_bottom = 182.0
 text = "COMPLETED QUESTS: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RecruitsCount" type="Label" parent="GuildOverview"]
-margin_left = 47.749
-margin_top = 195.0
-margin_right = 403.749
-margin_bottom = 221.0
+margin_left = 52.749
+margin_top = 193.0
+margin_right = 408.749
+margin_bottom = 219.0
 text = "RECRUITS: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GuildName" type="Label" parent="GuildOverview"]
+margin_left = 664.0
+margin_top = 59.0
+margin_right = 1258.0
+margin_bottom = 120.0
+custom_fonts/font = ExtResource( 4 )
+text = "GUILD NAME"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldTotal" type="Label" parent="GuildOverview"]
+margin_left = 1420.45
+margin_top = 54.9426
+margin_right = 1486.45
+margin_bottom = 80.9426
+text = "GOLD: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExpensesTotal" type="Label" parent="GuildOverview"]
+margin_left = 1420.45
+margin_top = 93.4713
+margin_right = 1533.45
+margin_bottom = 119.471
+text = "EXPENSES: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeeklyGain" type="Label" parent="GuildOverview"]
+margin_left = 1420.45
+margin_top = 132.0
+margin_right = 1534.45
+margin_bottom = 158.0
+text = "EARNINGS: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeeklyChange" type="Label" parent="GuildOverview"]
+margin_left = 1420.45
+margin_top = 170.529
+margin_right = 1533.45
+margin_bottom = 196.529
+text = "CHANGE:"
 __meta__ = {
 "_edit_use_anchors_": false
 }

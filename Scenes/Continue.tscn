@@ -15,8 +15,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 122.0
-margin_top = 220.0
-margin_right = 190.0
-margin_bottom = 234.0
+margin_left = 63.6054
+margin_top = 47.6647
+margin_right = 161.605
+margin_bottom = 73.6647
 text = "CONTINUE"
+__meta__ = {
+"_edit_use_anchors_": false
+}

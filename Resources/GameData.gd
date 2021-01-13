@@ -10,6 +10,8 @@ var data = {
 	"player": {
 		"name": "Falakin Pendrane",
 		"gold": 10,
+		"income": 0,
+		"expenditure": 0,
 		"experience": 0,
 		"accepted_quests": [],
 		"completed_quests": [],

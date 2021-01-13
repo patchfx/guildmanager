@@ -17,6 +17,18 @@ func init():
 func update_ui():
 	var guild = GameData.data.player.guild
 	$GuildOverview/GuildName.text = guild.name.to_upper()
+	$GuildOverview/GoldTotal.text = "GOLD: " + str(GameData.data.player.gold) + "g"
+	$GuildOverview/ExpensesTotal.text = "EXPENSES: " + str(GameData.data.player.expenditure) + "g"
+	$GuildOverview/WeeklyGain.text = "EARNINGS: " + str(GameData.data.player.income) + "g"
+	
+	var change = GameData.data.player.income - GameData.data.player.expenditure
+	if change < 0:
+		$GuildOverview/WeeklyChange.text = "CHANGE: " + str(change) + "g"
+	elif change == 0:
+		$GuildOverview/WeeklyChange.text = "CHANGE: " + str(change) + "g"
+	else:
+		$GuildOverview/WeeklyChange.text = "CHANGE: " + str(change) + "g"
+		
 	
 	if guild.renown <= 1:
 		$GuildOverview/GuildRenown.text = "RENOWN: UNKNOWN"

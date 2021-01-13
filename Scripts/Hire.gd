@@ -61,6 +61,7 @@ func _on_HireRecruit_button_up():
 			GameData.data.player.guild.recruits.push_back(id)
 			GameData.data.player.gold -= hire_cost
 			$HireRecruit.visible = false
+			GameData.data.player.expenditure += hire_cost
 			init()
 
 func _hire_cost_for(recruit):

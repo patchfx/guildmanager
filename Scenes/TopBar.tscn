@@ -38,19 +38,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Gold" type="Label" parent="."]
-margin_left = 1686.0
-margin_top = 19.0
-margin_right = 1866.0
-margin_bottom = 55.0
-theme = ExtResource( 1 )
-text = "Gold: 0"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="GameMenu" type="MenuButton" parent="."]
 margin_left = 37.8554
 margin_top = 21.5565
