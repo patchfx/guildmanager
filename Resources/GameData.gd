@@ -1,5 +1,9 @@
 extends Node
 
+var game = {
+	"version": "0.1"
+}
+
 var data = {
 	"week": 1,
 	"year": 738,
