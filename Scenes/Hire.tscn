@@ -1,0 +1,308 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Hire.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 03.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Themes/button_normal.tres" type="Texture" id=4]
+[ext_resource path="res://Assets/Themes/button_disabled.tres" type="Texture" id=5]
+[ext_resource path="res://Assets/Themes/button_active.tres" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 04.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 607.584, 68.5181, 529.416, 608.482 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 505.856, 906.706, 345.301, 186.569 )
+
+[node name="Hire" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 75.0
+margin_right = 1.00012
+margin_bottom = -115.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HireRecruits" type="Label" parent="."]
+margin_left = 25.1694
+margin_top = 10.5681
+margin_right = 170.0
+margin_bottom = 36.5681
+text = "HIRE RECRUITS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AvailableRecruits" type="ItemList" parent="."]
+margin_left = 25.0
+margin_top = 40.0
+margin_right = 912.0
+margin_bottom = 860.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterOverviewBackground" type="Sprite" parent="."]
+position = Vector2( 1449.68, 450.392 )
+scale = Vector2( 1.68727, 1.36994 )
+texture = SubResource( 1 )
+region_rect = Rect2( 596.5, 59.49, 544, 622 )
+
+[node name="CharacterName" type="Label" parent="."]
+margin_left = 1082.37
+margin_top = 94.8575
+margin_right = 1255.37
+margin_bottom = 120.858
+text = "CHARACTER NAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatsBackground" type="Sprite" parent="."]
+position = Vector2( 1244, 335 )
+scale = Vector2( 0.961459, 1.20955 )
+texture = SubResource( 2 )
+offset = Vector2( 0, -71.1008 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TraitsBackground" type="Sprite" parent="."]
+position = Vector2( 1627.04, 335 )
+scale = Vector2( 1.11193, 1.20955 )
+texture = SubResource( 2 )
+offset = Vector2( 0, -71.1008 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Might" type="Label" parent="."]
+margin_left = 1100.11
+margin_top = 159.0
+margin_right = 1166.11
+margin_bottom = 185.0
+text = "MIGHT:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MightStat" type="Label" parent="."]
+margin_left = 1318.0
+margin_top = 159.0
+margin_right = 1384.0
+margin_bottom = 185.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Reflex" type="Label" parent="."]
+margin_left = 1100.11
+margin_top = 189.0
+margin_right = 1176.11
+margin_bottom = 215.0
+text = "REFLEX:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ReflexStat" type="Label" parent="."]
+margin_left = 1318.0
+margin_top = 189.0
+margin_right = 1384.0
+margin_bottom = 215.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Mind" type="Label" parent="."]
+margin_left = 1100.0
+margin_top = 219.0
+margin_right = 1166.0
+margin_bottom = 245.0
+text = "MIND:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MindStat" type="Label" parent="."]
+margin_left = 1318.0
+margin_top = 219.0
+margin_right = 1384.0
+margin_bottom = 245.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Constitution" type="Label" parent="."]
+margin_left = 1100.0
+margin_top = 249.0
+margin_right = 1250.0
+margin_bottom = 275.0
+text = "CONSTITUTION:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ConstitutionStat" type="Label" parent="."]
+margin_left = 1318.0
+margin_top = 249.0
+margin_right = 1384.0
+margin_bottom = 275.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Charisma" type="Label" parent="."]
+margin_left = 1100.0
+margin_top = 279.0
+margin_right = 1206.0
+margin_bottom = 305.0
+text = "CHARISMA:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CharismaStat" type="Label" parent="."]
+margin_left = 1318.0
+margin_top = 279.0
+margin_right = 1384.0
+margin_bottom = 305.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="."]
+margin_left = 1100.0
+margin_top = 309.0
+margin_right = 1206.0
+margin_bottom = 335.0
+text = "LEVEL:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LevelStat" type="Label" parent="."]
+margin_left = 1318.0
+margin_top = 309.0
+margin_right = 1384.0
+margin_bottom = 335.0
+text = "0"
+align = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HireCostLabel" type="Label" parent="."]
+margin_left = 1085.69
+margin_top = 763.956
+margin_right = 1195.69
+margin_bottom = 789.956
+text = "HIRE COST:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HireCost" type="Label" parent="."]
+margin_left = 1215.0
+margin_top = 764.0
+margin_right = 1284.0
+margin_bottom = 790.0
+custom_colors/font_color = Color( 0.870588, 0.815686, 0.0235294, 1 )
+text = "0g"
+align = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HistoryLabel" type="Label" parent="."]
+margin_left = 1082.27
+margin_top = 400.102
+margin_right = 1192.27
+margin_bottom = 426.102
+text = "HISTORY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HistoryText" type="RichTextLabel" parent="."]
+margin_left = 1082.0
+margin_top = 430.0
+margin_right = 1812.0
+margin_bottom = 716.0
+bbcode_enabled = true
+bbcode_text = "HISTORY TEXT"
+text = "HISTORY TEXT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HireRecruit" type="TextureButton" parent="."]
+margin_left = 1612.9
+margin_top = 737.388
+margin_right = 1817.9
+margin_bottom = 805.388
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+texture_disabled = ExtResource( 5 )
+texture_focused = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hire" type="Label" parent="HireRecruit"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 191.0
+margin_bottom = 54.0
+text = "HIRE RECRUIT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TraitsText" type="RichTextLabel" parent="."]
+margin_left = 1458.0
+margin_top = 155.0
+margin_right = 1799.0
+margin_bottom = 337.0
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="item_selected" from="AvailableRecruits" to="." method="_on_AvailableRecruits_item_selected"]
+[connection signal="button_up" from="HireRecruit" to="." method="_on_HireRecruit_button_up"]

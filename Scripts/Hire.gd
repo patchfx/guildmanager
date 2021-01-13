@@ -49,6 +49,8 @@ func _on_AvailableRecruits_item_selected(index):
 				$HireRecruit.visible = false
 			else:
 				$HireRecruit.visible = true
+			
+			_populate_traits_text_for(recruit)
 
 func _on_HireRecruit_button_up():
 	var recruit_id = available_recruits[selected_index]
@@ -65,3 +67,17 @@ func _hire_cost_for(recruit):
 	var total_stats = recruit.might + recruit.reflex + recruit.mind + recruit.constitution + recruit.charisma
 	var hire_cost = total_stats / 10 * recruit.level
 	return(hire_cost)
+
+func _populate_traits_text_for(recruit):
+	var traits = recruit.traits
+	var text = ""
+	text = "IS MOTIVATED BY " + traits["motivator"] + ". "
+	text = text + "THEIR DISPOSITION IS " + traits["disposition"] + " "
+	if traits["outlook"] == "OPTIMISTIC":
+		text = text + "WITH AN OPTIMISTIC OUTLOOK ON LIFE." + " "
+	else:
+		print(traits["outlook"])
+		text = text + "WITH A PESSIMISTIC OUTLOOK ON LIFE." + " "
+	text = text + "THEY ARE " + traits["integrity"] + " " + traits["impulsiveness"] + ". "
+	text = text + "OTHER QUALITIES INCLUDE BEING " + traits["boldness"] + ", " + traits["agreeableness"] + ", " + traits["interactivity"] + " AND " + traits["conformity"] + "."
+	$TraitsText.bbcode_text = text

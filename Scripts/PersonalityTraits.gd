@@ -49,38 +49,38 @@ enum Disposition {
 }
 
 enum Outlook {
-	OPTMISTIC,
+	OPTIMISTIC,
 	PESSIMISTIC
 }
 
 enum Integrity {
-	Conscientious,
-	Unscrupulous
+	CONSCIENTIOUS,
+	UNSCRUPULOUS
 }
 
 enum Impulsiveness {
-	Controlled,
-	Spontaneous
+	CONTROLLED,
+	SPONTANEOUS
 }
 
 enum Boldness {
-	Intrepid,
-	Cautious
+	INTREPID,
+	CAUTIOUS
 }
 
 enum Agreeableness {
-	Agreeable,
-	Disagreeable
+	AGREEABLE,
+	DISAGREEABLE
 }
 
 enum Interactivity {
-	Engaging,
-	Reserved
+	ENGAGING,
+	RESERVED
 }
 
 enum Conformity {
-	Conventional,
-	Heterodox
+	CONVENTIONAL,
+	HETERODOX
 }
 
 var motivators = Motivator.keys()
@@ -91,6 +91,7 @@ var outlook = Outlook.keys()
 var integrity = Integrity.keys()
 var interactivity = Interactivity.keys()
 var conformity = Conformity.keys()
+var agreeableness = Agreeableness.keys()
 
 func add_personality_traits_to(character):
 	character.traits["motivator"] = motivators[randi()%(motivators.size()) - 1]
@@ -101,3 +102,5 @@ func add_personality_traits_to(character):
 	character.traits["integrity"] = integrity[randi()%(integrity.size()) - 1]
 	character.traits["interactivity"] = interactivity[randi()%(interactivity.size()) - 1]
 	character.traits["conformity"] = conformity[randi()%(conformity.size()) - 1]
+	character.traits["agreeableness"] = agreeableness[randi()%(agreeableness.size()) - 1]
+
