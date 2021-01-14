@@ -117,40 +117,41 @@ __meta__ = {
 }
 
 [node name="GoldTotal" type="Label" parent="GuildOverview"]
-margin_left = 1420.45
-margin_top = 54.9426
-margin_right = 1486.45
-margin_bottom = 80.9426
+margin_left = 1420.0
+margin_top = 55.0
+margin_right = 1661.0
+margin_bottom = 81.0
 text = "GOLD: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ExpensesTotal" type="Label" parent="GuildOverview"]
-margin_left = 1420.45
-margin_top = 93.4713
-margin_right = 1533.45
-margin_bottom = 119.471
+margin_left = 1420.0
+margin_top = 93.0
+margin_right = 1660.0
+margin_bottom = 119.0
 text = "EXPENSES: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WeeklyGain" type="Label" parent="GuildOverview"]
-margin_left = 1420.45
+margin_left = 1420.0
 margin_top = 132.0
-margin_right = 1534.45
+margin_right = 1665.0
 margin_bottom = 158.0
 text = "EARNINGS: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WeeklyChange" type="Label" parent="GuildOverview"]
-margin_left = 1420.45
-margin_top = 170.529
-margin_right = 1533.45
-margin_bottom = 196.529
+[node name="WeeklyChange" type="RichTextLabel" parent="GuildOverview"]
+margin_left = 1420.59
+margin_top = 170.0
+margin_right = 1639.59
+margin_bottom = 198.0
+bbcode_enabled = true
 text = "CHANGE:"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -23,11 +23,11 @@ func update_ui():
 	
 	var change = GameData.data.player.income - GameData.data.player.expenditure
 	if change < 0:
-		$GuildOverview/WeeklyChange.text = "CHANGE: " + str(change) + "g"
+		$GuildOverview/WeeklyChange.bbcode_text = "CHANGE: [color=#ff0000]" + str(change) + "g[/color]"
 	elif change == 0:
 		$GuildOverview/WeeklyChange.text = "CHANGE: " + str(change) + "g"
 	else:
-		$GuildOverview/WeeklyChange.text = "CHANGE: " + str(change) + "g"
+		$GuildOverview/WeeklyChange.text = "CHANGE: [color=#00ff00]+" + str(change) + "g[/color]"
 		
 	
 	if guild.renown <= 1:
