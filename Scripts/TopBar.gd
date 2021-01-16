@@ -5,4 +5,4 @@ func _ready():
 	pass # Replace with function body.
 
 func update_ui():
-	$Date.text = "Week " + str(GameData.data.week)
+	$Date.text = "WEEK " + str(GameData.data.week) + " IN THE YEAR " + str(GameData.data.year)
