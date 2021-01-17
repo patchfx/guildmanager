@@ -168,6 +168,6 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="PartiesBackground" type="Sprite" parent="Parties"]
-position = Vector2( 283.562, 565.846 )
-scale = Vector2( 1.00968, 1 )
+position = Vector2( 280.119, 565.846 )
+scale = Vector2( 1.02267, 1 )
 texture = SubResource( 2 )
