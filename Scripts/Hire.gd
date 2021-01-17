@@ -40,7 +40,7 @@ func _on_AvailableRecruits_item_selected(index):
 			
 			for historical in recruit.history:
 				history = history + historical + "\n"
-			print(history)
+
 			$HistoryText.bbcode_text = history
 			
 			var hire_cost = _hire_cost_for(recruit)
@@ -77,7 +77,7 @@ func _populate_traits_text_for(recruit):
 	if traits["outlook"] == "OPTIMISTIC":
 		text = text + "WITH AN OPTIMISTIC OUTLOOK ON LIFE." + " "
 	else:
-		print(traits["outlook"])
+
 		text = text + "WITH A PESSIMISTIC OUTLOOK ON LIFE." + " "
 	text = text + "THEY ARE " + traits["integrity"] + " " + traits["impulsiveness"] + ". "
 	text = text + "OTHER QUALITIES INCLUDE BEING " + traits["boldness"] + ", " + traits["agreeableness"] + ", " + traits["interactivity"] + " AND " + traits["conformity"] + "."

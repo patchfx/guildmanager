@@ -1,14 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Images/avatar-placeholder.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 03.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Themes/header_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 04.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 75.9066, 691.55, 411.824, 195.03 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 604.043, 67.7271, 530.942, 608.298 )
 
 [node name="Dashboard" type="Control"]
 anchor_right = 1.0
@@ -156,3 +162,12 @@ text = "CHANGE:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Parties" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="PartiesBackground" type="Sprite" parent="Parties"]
+position = Vector2( 283.562, 565.846 )
+scale = Vector2( 1.00968, 1 )
+texture = SubResource( 2 )
