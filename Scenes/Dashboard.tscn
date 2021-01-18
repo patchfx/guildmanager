@@ -198,9 +198,7 @@ __meta__ = {
 }
 
 [node name="PartyGrid" type="GridContainer" parent="Parties/PartyScrollContainer"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 438.0
+margin_right = 448.0
 margin_bottom = 480.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

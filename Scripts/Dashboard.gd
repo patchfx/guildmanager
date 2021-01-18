@@ -14,9 +14,10 @@ func _ready():
 
 func init():
 	var item = party_grid_item.instance()
-	var other_item = party_grid_item.instance()
 	item.text = "CREATE NEW PARTY"
 	var party_grid = get_node("Parties/PartyScrollContainer/PartyGrid")
+	for party_item in party_grid.get_children():
+		party_grid.remove_child(party_item)
 	party_grid.add_child(item)
 
 func update_ui():

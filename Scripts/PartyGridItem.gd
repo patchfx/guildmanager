@@ -18,4 +18,4 @@ func _ready():
 
 func _on_Party_button_up():
 	if self.text == "CREATE NEW PARTY":
-		print("Creating a new party...")
+		get_parent().get_parent().get_parent().get_parent().get_parent().open_scene("CreateParty")
