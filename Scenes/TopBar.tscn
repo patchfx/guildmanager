@@ -43,7 +43,7 @@ margin_left = 37.8554
 margin_top = 21.5565
 margin_right = 208.855
 margin_bottom = 53.5565
-text = "GUILD MANAGER"
+text = "GUILD TYCOON"
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false

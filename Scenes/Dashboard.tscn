@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Images/avatar-placeholder.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 03.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Themes/header_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 04.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Dashboard.gd" type="Script" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -24,8 +25,8 @@ margin_top = 77.0
 margin_right = 1.0
 margin_bottom = -74.0
 theme = ExtResource( 1 )
+script = ExtResource( 9 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -166,8 +167,41 @@ __meta__ = {
 [node name="Parties" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PartiesBackground" type="Sprite" parent="Parties"]
 position = Vector2( 280.119, 565.846 )
 scale = Vector2( 1.02267, 1 )
 texture = SubResource( 2 )
+
+[node name="Title" type="Label" parent="Parties"]
+margin_left = 57.5685
+margin_top = 297.642
+margin_right = 139.569
+margin_bottom = 323.642
+text = "PARTIES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PartyScrollContainer" type="ScrollContainer" parent="Parties"]
+margin_left = 59.0
+margin_top = 348.0
+margin_right = 507.0
+margin_bottom = 828.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PartyGrid" type="GridContainer" parent="Parties/PartyScrollContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 438.0
+margin_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 10

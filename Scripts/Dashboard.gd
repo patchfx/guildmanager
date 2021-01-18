@@ -1,5 +1,6 @@
 extends Control
 
+var party_grid_item = preload("res://Scenes/PartyGridItem.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,7 +13,11 @@ func _ready():
 	
 
 func init():
-	pass
+	var item = party_grid_item.instance()
+	var other_item = party_grid_item.instance()
+	item.text = "CREATE NEW PARTY"
+	var party_grid = get_node("Parties/PartyScrollContainer/PartyGrid")
+	party_grid.add_child(item)
 
 func update_ui():
 	var guild = GameData.data.player.guild

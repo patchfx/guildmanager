@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Continue.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Scenes/TopBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/BottomBar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Hire.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/Dashboard.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/TopBar.gd" type="Script" id=8]
 
 [node name="Main" type="Node"]
@@ -16,7 +15,6 @@ script = ExtResource( 1 )
 margin_top = 75.0
 margin_right = 1.00012
 margin_bottom = -115.0
-script = ExtResource( 7 )
 
 [node name="Hire" parent="." instance=ExtResource( 6 )]
 visible = false
