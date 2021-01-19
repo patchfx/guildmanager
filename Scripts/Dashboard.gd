@@ -15,6 +15,10 @@ func _ready():
 func init():
 	var item = party_grid_item.instance()
 	item.text = "CREATE NEW PARTY"
+	if GameData.data.player.guild.recruits.size() == 0:
+		item.disabled = true
+	else:
+		item.disabled = false
 	var party_grid = get_node("Parties/PartyScrollContainer/PartyGrid")
 	for party_item in party_grid.get_children():
 		party_grid.remove_child(party_item)

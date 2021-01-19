@@ -40,9 +40,9 @@ __meta__ = {
 
 [node name="GuildMembers" type="ItemList" parent="."]
 margin_left = 24.0
-margin_top = 108.0
+margin_top = 106.413
 margin_right = 682.0
-margin_bottom = 783.0
+margin_bottom = 781.413
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -57,7 +57,7 @@ __meta__ = {
 }
 
 [node name="StatsBackground" type="Sprite" parent="."]
-position = Vector2( 978.633, 262.093 )
+position = Vector2( 978.633, 261.621 )
 scale = Vector2( 1.19094, 1.60734 )
 texture = SubResource( 1 )
 
@@ -196,4 +196,39 @@ align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AddMember" type="Button" parent="."]
+margin_left = 1016.0
+margin_top = 338.0
+margin_right = 1189.0
+margin_bottom = 370.0
+text = "ADD MEMBER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RemoveMember" type="Button" parent="."]
+visible = false
+margin_left = 1016.0
+margin_top = 338.0
+margin_right = 1189.0
+margin_bottom = 370.0
+text = "REMOVE MEMBER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateNewParty" type="Button" parent="."]
+margin_left = 736.0
+margin_top = 707.0
+margin_right = 1231.0
+margin_bottom = 782.0
+disabled = true
+text = "CREATE NEW PARTY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_changed" from="PartyName" to="." method="_on_PartyName_text_changed"]
 [connection signal="item_selected" from="GuildMembers" to="." method="_on_GuildMembers_item_selected"]
+[connection signal="button_up" from="AddMember" to="." method="_on_AddMember_button_up"]
+[connection signal="button_up" from="CreateNewParty" to="." method="_on_CreateNewParty_button_up"]

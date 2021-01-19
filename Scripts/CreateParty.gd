@@ -1,6 +1,8 @@
 extends Control
 
 var party_members = []
+var guild_members = []
+var selected_party_member = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,14 +16,17 @@ func init():
 	for id in GameData.data.player.guild.recruits:
 		var recruit = GameData.data.npcs[id]
 		$GuildMembers.add_item(recruit.name)
-		party_members.push_back(id)
+		guild_members.push_back(id)
+
+	$PartyMembers.select(selected_party_member)
 
 func update_ui():
 	pass
 
 
 func _on_GuildMembers_item_selected(index):
-	var id = party_members[index]
+	selected_party_member = index
+	var id = guild_members[index]
 	var recruit = GameData.data.npcs[id]
 	$NameLabel.text = recruit.name.to_upper()
 	$Might.text = str(recruit.might)
@@ -30,3 +35,18 @@ func _on_GuildMembers_item_selected(index):
 	$Charisma.text = str(recruit.charisma)
 	$Reflex.text = str(recruit.reflex)
 	$Level.text = str(recruit.level)
+
+
+func _on_CreateNewParty_button_up():
+	print("CREATE NEW PARTY " + $PartyName.text)
+
+
+func _on_PartyName_text_changed(new_text):
+	if new_text.length() > 0 and $PartyMembers.get_item_count() > 0:
+		$CreateNewParty.disabled = false
+	else:
+		$CreateNewParty.disabled = true
+
+
+func _on_AddMember_button_up():
+	print("Add member!")
