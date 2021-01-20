@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/Continue.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 04.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 607.469, 66.8319, 531.088, 610.808 )
 
 [node name="Continue" type="Control"]
 anchor_right = 1.0
@@ -14,12 +20,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 63.6054
-margin_top = 47.6647
-margin_right = 161.605
-margin_bottom = 73.6647
-text = "CONTINUE"
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 312.573, 329.755 )
+texture = SubResource( 1 )
+
+[node name="QuestTitle" type="Label" parent="."]
+margin_left = 99.0
+margin_top = 61.0
+margin_right = 528.0
+margin_bottom = 87.0
+text = "QUEST TITLE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestDescription" type="RichTextLabel" parent="."]
+margin_left = 100.0
+margin_top = 114.0
+margin_right = 528.0
+margin_bottom = 527.0
+bbcode_enabled = true
+bbcode_text = "QUEST DESCRIPTION"
+text = "QUEST DESCRIPTION"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestDifficulty" type="Label" parent="."]
+margin_left = 99.8409
+margin_top = 540.38
+margin_right = 528.841
+margin_bottom = 566.38
+text = "QUEST DIFFICULTY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestReward" type="Label" parent="."]
+margin_left = 99.8409
+margin_top = 570.38
+margin_right = 528.841
+margin_bottom = 596.38
+text = "QUEST REWARD"
 __meta__ = {
 "_edit_use_anchors_": false
 }
