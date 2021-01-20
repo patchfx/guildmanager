@@ -49,4 +49,9 @@ func _on_PartyName_text_changed(new_text):
 
 
 func _on_AddMember_button_up():
-	print("Add member!")
+	var id = GameData.data.player.guild.recruits[selected_party_member]
+	for npc_id in GameData.data.npcs:
+		if id == npc_id:
+			var recruit = GameData.data.npcs[id]
+			$PartyMembers.add_item(recruit.name)
+			$GuildMembers.remove_item(selected_party_member)
