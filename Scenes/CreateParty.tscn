@@ -44,6 +44,7 @@ margin_top = 106.413
 margin_right = 682.0
 margin_bottom = 781.413
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -53,6 +54,7 @@ margin_top = 108.0
 margin_right = 1854.0
 margin_bottom = 783.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -230,5 +232,7 @@ __meta__ = {
 }
 [connection signal="text_changed" from="PartyName" to="." method="_on_PartyName_text_changed"]
 [connection signal="item_selected" from="GuildMembers" to="." method="_on_GuildMembers_item_selected"]
+[connection signal="item_selected" from="PartyMembers" to="." method="_on_PartyMembers_item_selected"]
 [connection signal="button_up" from="AddMember" to="." method="_on_AddMember_button_up"]
+[connection signal="button_up" from="RemoveMember" to="." method="_on_RemoveMember_button_up"]
 [connection signal="button_up" from="CreateNewParty" to="." method="_on_CreateNewParty_button_up"]

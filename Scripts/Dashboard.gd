@@ -23,6 +23,11 @@ func init():
 	for party_item in party_grid.get_children():
 		party_grid.remove_child(party_item)
 	party_grid.add_child(item)
+	
+	for party in GameData.data.player.guild.parties:
+		var party_item = party_grid_item.instance()
+		party_item.text = party.name
+		party_grid.add_child(party_item)
 
 func update_ui():
 	var guild = GameData.data.player.guild

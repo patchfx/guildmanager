@@ -18,7 +18,8 @@ var data = {
 		"guild": {
 			"name": "The Hammerthorns",
 			"renown": 1,
-			"recruits": []
+			"recruits": [],
+			"parties": []
 		}
 	},
 	"quests": [{
