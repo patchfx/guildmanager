@@ -1,5 +1,6 @@
 extends Control
 
+var party_grid_item = preload("res://Scenes/PartyGridItem.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,9 +16,22 @@ func init():
 				$QuestDescription.bbcode_text = quest.description
 				$QuestDifficulty.text = "DIFFICULTY: EASY"
 				$QuestReward.text = "REWARD: " + str(quest.reward)
+	var party_grid = get_node("PartyScrollContainer/PartyGrid")
+	for party_item in party_grid.get_children():
+		party_grid.remove_child(party_item)
+
+	for party in GameData.data.player.guild.parties:
+		var party_item = party_grid_item.instance()
+		party_item.connect("button_up", self, "party_clicked", [party.name])
+		party_item.text = party.name
+		party_grid.add_child(party_item)
+	
 
 func update_ui():
 	pass
 
 func activate():
 	pass
+
+func party_clicked(name):
+	$PartyName.text = name
