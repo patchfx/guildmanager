@@ -104,7 +104,7 @@ position = Vector2( 1600, 435 )
 scale = Vector2( 1.1, 1.3 )
 texture = SubResource( 1 )
 
-[node name="AssignedePartyScrollContainer2" type="ScrollContainer" parent="."]
+[node name="AssignedePartyScrollContainer" type="ScrollContainer" parent="."]
 margin_left = 1370.0
 margin_top = 140.0
 margin_right = 1834.0
@@ -113,7 +113,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AssignedPartyGrid" type="GridContainer" parent="AssignedePartyScrollContainer2"]
+[node name="AssignedPartyGrid" type="GridContainer" parent="AssignedePartyScrollContainer"]
 margin_right = 464.0
 margin_bottom = 378.0
 size_flags_horizontal = 3

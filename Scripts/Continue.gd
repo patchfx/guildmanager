@@ -37,6 +37,8 @@ func party_clicked(name):
 	var party_grid = get_node("PartyScrollContainer/PartyGrid")
 	var assigned_party_grid = get_node("AssignedePartyScrollContainer/AssignedPartyGrid")
 	var party_item = party_grid_item.instance()
+
+	party_item.connect("button_up", self, "remove_party_clicked", [name])
 	party_item.text = name
 	assigned_party_grid.add_child(party_item)
 	
@@ -44,3 +46,16 @@ func party_clicked(name):
 		if item.text == name:
 			party_grid.remove_child(item)
 		
+
+func remove_party_clicked(name):
+	var party_grid = get_node("PartyScrollContainer/PartyGrid")
+	var assigned_party_grid = get_node("AssignedePartyScrollContainer/AssignedPartyGrid")
+	var party_item = party_grid_item.instance()
+
+	party_item.connect("button_up", self, "party_clicked", [name])
+	party_item.text = name
+	party_grid.add_child(party_item)
+	
+	for item in assigned_party_grid.get_children():
+		if item.text == name:
+			assigned_party_grid.remove_child(item)
