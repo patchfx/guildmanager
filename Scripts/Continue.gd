@@ -15,7 +15,7 @@ func init():
 				$QuestTitle.text = quest.name
 				$QuestDescription.bbcode_text = quest.description
 				$QuestDifficulty.text = "DIFFICULTY: EASY"
-				$QuestReward.text = "REWARD: " + str(quest.reward)
+				$QuestReward.text = "REWARD: " + str(quest.reward) + "g"
 	var party_grid = get_node("PartyScrollContainer/PartyGrid")
 	for party_item in party_grid.get_children():
 		party_grid.remove_child(party_item)
@@ -26,6 +26,8 @@ func init():
 		party_item.text = party.name
 		party_grid.add_child(party_item)
 	
+	var party = GameData.data.player.guild.parties[0]
+	party_clicked(party.name)
 
 func update_ui():
 	pass
