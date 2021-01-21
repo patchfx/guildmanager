@@ -25,9 +25,7 @@ func init():
 		party_item.connect("button_up", self, "party_clicked", [party.name])
 		party_item.text = party.name
 		party_grid.add_child(party_item)
-	
-	var party = GameData.data.player.guild.parties[0]
-	party_clicked(party.name)
+
 
 func update_ui():
 	pass
@@ -36,4 +34,13 @@ func activate():
 	pass
 
 func party_clicked(name):
-	$PartyName.text = name
+	var party_grid = get_node("PartyScrollContainer/PartyGrid")
+	var assigned_party_grid = get_node("AssignedePartyScrollContainer/AssignedPartyGrid")
+	var party_item = party_grid_item.instance()
+	party_item.text = name
+	assigned_party_grid.add_child(party_item)
+	
+	for item in party_grid.get_children():
+		if item.text == name:
+			party_grid.remove_child(item)
+		

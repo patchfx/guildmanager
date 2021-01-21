@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/Continue.gd" type="Script" id=2]
@@ -8,11 +8,6 @@
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 607.469, 66.8319, 531.088, 610.808 )
-
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1174.75, 852.572, 453.101, 167.56 )
 
 [node name="Continue" type="Control"]
 anchor_right = 1.0
@@ -28,8 +23,8 @@ __meta__ = {
 }
 
 [node name="QuestBackground" type="Sprite" parent="."]
-position = Vector2( 340.659, 438.711 )
-scale = Vector2( 1.10578, 1.35723 )
+position = Vector2( 340, 435 )
+scale = Vector2( 1.1, 1.3 )
 texture = SubResource( 1 )
 
 [node name="QuestTitle" type="Label" parent="."]
@@ -75,40 +70,91 @@ __meta__ = {
 }
 
 [node name="PartiesBackground" type="Sprite" parent="."]
-position = Vector2( 982.264, 282.601 )
-scale = Vector2( 1.00398, 0.83566 )
+position = Vector2( 962.573, 435 )
+scale = Vector2( 1.1, 1.3 )
 texture = SubResource( 1 )
 
 [node name="PartyScrollContainer" type="ScrollContainer" parent="."]
-margin_left = 764.0
-margin_top = 109.0
-margin_right = 1196.0
-margin_bottom = 487.0
+margin_left = 728.0
+margin_top = 140.0
+margin_right = 1194.0
+margin_bottom = 772.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PartyGrid" type="GridContainer" parent="PartyScrollContainer"]
-margin_right = 432.0
-margin_bottom = 378.0
+margin_right = 466.0
+margin_bottom = 632.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="PartiesLabel" type="Label" parent="."]
-margin_left = 765.353
-margin_top = 75.0323
-margin_right = 847.353
-margin_bottom = 101.032
-text = "PARTIES"
+margin_left = 730.0
+margin_top = 95.0
+margin_right = 926.0
+margin_bottom = 121.0
+text = "AVAILABLE PARTIES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="PartyOverviewBackground" type="Sprite" parent="."]
-position = Vector2( 985.647, 702.509 )
-scale = Vector2( 1.14316, 1.44805 )
-texture = SubResource( 2 )
+[node name="PartyBackground" type="Sprite" parent="."]
+position = Vector2( 1600, 435 )
+scale = Vector2( 1.1, 1.3 )
+texture = SubResource( 1 )
 
-[node name="PartyName" type="Label" parent="."]
-margin_left = 746.117
-margin_top = 599.007
-margin_right = 870.117
-margin_bottom = 625.007
-text = "PARTY NAME"
+[node name="AssignedePartyScrollContainer2" type="ScrollContainer" parent="."]
+margin_left = 1370.0
+margin_top = 140.0
+margin_right = 1834.0
+margin_bottom = 518.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AssignedPartyGrid" type="GridContainer" parent="AssignedePartyScrollContainer2"]
+margin_right = 464.0
+margin_bottom = 378.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AssignedPartyLabel" type="Label" parent="."]
+margin_left = 1375.0
+margin_top = 95.0
+margin_right = 1564.0
+margin_bottom = 121.0
+text = "ASSIGNED PARTIES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SuccessChance" type="Label" parent="."]
+margin_left = 1367.0
+margin_top = 688.0
+margin_right = 1842.0
+margin_bottom = 714.0
+text = "SUCCESS CHANCE:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalCost" type="Label" parent="."]
+margin_left = 1367.0
+margin_top = 720.0
+margin_right = 1842.0
+margin_bottom = 746.0
+text = "TOTAL COST:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalProfit" type="Label" parent="."]
+margin_left = 1367.0
+margin_top = 751.0
+margin_right = 1842.0
+margin_bottom = 777.0
+text = "TOTAL PROFIT:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
