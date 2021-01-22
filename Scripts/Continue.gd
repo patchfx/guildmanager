@@ -33,6 +33,9 @@ func update_ui():
 func activate():
 	pass
 
+func next():
+	print("Next quest or continue!")
+
 func party_clicked(name):
 	var party_grid = get_node("PartyScrollContainer/PartyGrid")
 	var assigned_party_grid = get_node("AssignedePartyScrollContainer/AssignedPartyGrid")
