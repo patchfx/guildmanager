@@ -1,12 +1,14 @@
 extends Control
 
 var party_grid_item = preload("res://Scenes/PartyGridItem.tscn")
+var all_quests_assigned = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func init():
+	all_quests_assigned = false
 	if GameData.data.player.accepted_quests.size() > 0:
 		var id = GameData.data.player.accepted_quests[0]
 		
@@ -34,7 +36,22 @@ func activate():
 	pass
 
 func next():
-	print("Next quest or continue!")
+	if GameData.data.player.accepted_quests.size() > 0:
+		var quest_id = GameData.data.player.accepted_quests[0]
+		for quest in GameData.data.quests:
+			if quest_id == quest.id:
+				for party_name in $AssignedePartyScrollContainer/AssignedPartyGrid.get_children():
+					for party in GameData.data.player.guild.parties:
+						print("PARTY: " + party.name)
+						if party.name == party_name.text:
+							quest.parties.push_back(party)
+				GameData.data.player.active_quests.push_back(quest)
+				GameData.data.player.accepted_quests.pop_front()
+	else:
+		get_parent().open_scene("Quest")
+	
+	if GameData.data.player.accepted_quests.size() == 0:
+		get_parent().open_scene("Quest")
 
 func party_clicked(name):
 	var party_grid = get_node("PartyScrollContainer/PartyGrid")
@@ -48,7 +65,7 @@ func party_clicked(name):
 	for item in party_grid.get_children():
 		if item.text == name:
 			party_grid.remove_child(item)
-		
+	
 
 func remove_party_clicked(name):
 	var party_grid = get_node("PartyScrollContainer/PartyGrid")

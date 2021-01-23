@@ -1,9 +1,22 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
 
 [node name="Quest" type="Control"]
 margin_top = 75.0
 margin_right = 1920.0
 margin_bottom = 965.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 48.6172
+margin_top = 23.2958
+margin_right = 193.617
+margin_bottom = 49.2958
+text = "QUEST SCREEN"
 __meta__ = {
 "_edit_use_anchors_": false
 }

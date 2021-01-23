@@ -14,6 +14,7 @@ var data = {
 		"expenditure": 0,
 		"experience": 0,
 		"accepted_quests": [],
+		"active_quests": [],
 		"completed_quests": [],
 		"guild": {
 			"name": "The Hammerthorns",
@@ -28,7 +29,8 @@ var data = {
 		"description": "I am Quinn Goraneth, mayor of Fellspeare Village. A band of [color=#ff0000]4 Kobolds[/color] attacked during the night stealing from our already dwindling supplies. We have little coin, hence why we are approaching your fledgling guild, but we will pay what we can spare as a reward. Can you help?",
 		"reward": 10,
 		"quest_type": "Generic",
-		"conditions": { "kill": 4, "enemy": "kobold" }
+		"conditions": { "kill": 4, "enemy": "kobold" },
+		"parties": []
 	}],
 	"locations": [
 		{ "id": 0, "name": "Blackspell", "max_population": 30 }
