@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Continue.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Scenes/CreateParty.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/TopBar.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scripts/Quest.gd" type="Script" id=10]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -39,4 +38,3 @@ margin_top = 75.0
 margin_right = 1920.0
 
 [node name="Quest" parent="." instance=ExtResource( 9 )]
-script = ExtResource( 10 )

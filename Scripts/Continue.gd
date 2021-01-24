@@ -11,13 +11,13 @@ func init():
 	all_quests_assigned = false
 	if GameData.data.player.accepted_quests.size() > 0:
 		var id = GameData.data.player.accepted_quests[0]
-		
 		for quest in GameData.data.quests:
 			if quest.id == id:
 				$QuestTitle.text = quest.name
 				$QuestDescription.bbcode_text = quest.description
 				$QuestDifficulty.text = "DIFFICULTY: EASY"
 				$QuestReward.text = "REWARD: " + str(quest.reward) + "g"
+
 	var party_grid = get_node("PartyScrollContainer/PartyGrid")
 	for party_item in party_grid.get_children():
 		party_grid.remove_child(party_item)
@@ -42,7 +42,6 @@ func next():
 			if quest_id == quest.id:
 				for party_name in $AssignedePartyScrollContainer/AssignedPartyGrid.get_children():
 					for party in GameData.data.player.guild.parties:
-						print("PARTY: " + party.name)
 						if party.name == party_name.text:
 							quest.parties.push_back(party)
 				GameData.data.player.active_quests.push_back(quest)

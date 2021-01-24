@@ -54,10 +54,21 @@ func _on_PartyMembers_item_selected(index):
 
 
 func _on_CreateNewParty_button_up():
+	var recruits = []
+	var item_count = $PartyMembers.get_item_count()
+	for idx in range(0, item_count):
+		var recruit = $PartyMembers.get_item_text(idx)
+		for npc_id in GameData.data.npcs:
+			if GameData.data.npcs[npc_id].name == recruit:
+				var npc = GameData.data.npcs[npc_id]
+				recruits.push_back(npc.id)
+
 	var party = {
 		"name": $PartyName.text,
-		"recruits": $PartyMembers.get_children()
+		"recruits": recruits
 	}
+	
+	print(party.recruits)
 	
 	GameData.data.player.guild.parties.push_back(party)
 	
