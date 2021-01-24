@@ -62,15 +62,38 @@ func generate_npcs(initial_population):
 		personality_traits.add_personality_traits_to(character)
 		
 		npcs.push_back(character)
-
+		
+	for _i in range(100):
+		var id = uuid.v4()
+		var first_name = populated_list[randi()%(populated_list.size() - 1) + 1]
+		var last_name = populated_list[randi()%(populated_list.size() - 1) + 1]
+		var kobold = {
+			"id": id,
+			"age": 0,
+			"name": first_name + " " + last_name,
+			"might": 7,
+			"reflex": 15,
+			"constitution": 9,
+			"mind": 8,
+			"charisma": 8,
+			"xp": 0,
+			"level": 1,
+			"traits": {},
+			"recruitable": false,
+			"faction": "Kobolds",
+			"history": ["Born in the year " + str(GameData.data.year)]
+		}
+		npcs.push_back(kobold)
+	
 func add_faction_leaders():
 	for faction in GameData.data.factions:
 		faction.id = uuid.v4()
 		var leader = npcs[randi()%(npcs.size() - 1)]
-		leader.recruitable = false
-		leader.faction = faction.id
-		leader.history.push_back("Appointed leader of the " + faction.name + " faction")
-		faction.leader = leader.id
+		if leader.recruitable == true:
+			leader.recruitable = false
+			leader.faction = faction.id
+			leader.history.push_back("Appointed leader of the " + faction.name + " faction")
+			faction.leader = leader.id
 
 func add_npcs_to_factions():
 	for npc in npcs:

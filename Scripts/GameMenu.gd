@@ -19,4 +19,3 @@ func _on_item_pressed(ID):
 	elif menu_pressed == "LOAD GAME":
 		save_load.load_save_file()
 		get_parent().get_parent().open_scene("Dashboard")
-	print(popup.get_item_text(ID), " pressed")

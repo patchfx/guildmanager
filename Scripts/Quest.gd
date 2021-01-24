@@ -17,8 +17,7 @@ func init():
 	var quest = GameData.data.player.active_quests[0]
 	$QuestName.text = quest.name
 	for npc in quest.enemies:
-		pass
-		#combat_order.push_front(npc)
+		combat_order.push_front(npc)
 	
 	for party in quest.parties:
 		for recruit_id in party.recruits:

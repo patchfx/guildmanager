@@ -67,9 +67,7 @@ func _on_CreateNewParty_button_up():
 		"name": $PartyName.text,
 		"recruits": recruits
 	}
-	
-	print(party.recruits)
-	
+		
 	GameData.data.player.guild.parties.push_back(party)
 	
 	get_parent().open_scene("Dashboard")

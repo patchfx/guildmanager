@@ -29,25 +29,8 @@ var data = {
 		"description": "I am Quinn Goraneth, mayor of Fellspeare Village. A band of [color=#ff0000]4 Kobolds[/color] attacked during the night stealing from our already dwindling supplies. We have little coin, hence why we are approaching your fledgling guild, but we will pay what we can spare as a reward. Can you help?",
 		"reward": 10,
 		"quest_type": "Generic",
-		"conditions": { "kill": 2, "enemy": "kobold" },
-		"enemies": [
-			{
-				"name": "Kobold",
-				"might": 7,
-				"reflex": 15,
-				"constitution": 9,
-				"mind": 8,
-				"charisma": 8
-			},
-			{
-				"name": "Kobold",
-				"might": 7,
-				"reflex": 15,
-				"constitution": 9,
-				"mind": 8,
-				"charisma": 8
-			}
-		],
+		"conditions": { "kill": 2, "faction": "Kobolds" },
+		"enemies": [],
 		"parties": []
 	}],
 	"locations": [
