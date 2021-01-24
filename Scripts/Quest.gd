@@ -1,6 +1,7 @@
 extends Control
 
 var dice = preload("res://Scripts/Dice.gd").new()
+var combat = preload("res://Scripts/Combat.gd").new()
 var combat_order = []
 
 # Declare member variables here. Examples:
@@ -28,9 +29,9 @@ func init():
 			else:
 				combat_order.push_front(recruit_id)
 
-	for character in combat_order:
-		var recruit = GameData.data.npcs[character]
-		$CombatLog.bbcode_text = $CombatLog.bbcode_text + "\n" + recruit.name + " attacks!"
+	combat.init(combat_order)
+	combat.play_round()
+
 
 func update_ui():
 	pass
