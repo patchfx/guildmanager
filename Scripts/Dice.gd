@@ -14,6 +14,6 @@ func roll_multiple(rolls, sides):
 	var total = 0
 	
 	for _x in range(0, rolls):
-		total += randi()%sides+1
+		total += randi()%int(sides)+1
 	
 	return(total)

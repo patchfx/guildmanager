@@ -57,6 +57,14 @@ func generate_npcs(initial_population):
 			"traits": {},
 			"recruitable": true,
 			"faction": "",
+			"equipped": {
+				"head": [],
+				"torso": [],
+				"right_hand": [{ "name": "Short Sword", "type": "sword", "hit_dice": 6 }],
+				"left_hand": [],
+				"right_leg": [],
+				"left_leg": []
+			},
 			"history": ["Born in the year " + str(GameData.data.year)]
 		}
 		
@@ -83,6 +91,14 @@ func generate_npcs(initial_population):
 			"traits": {},
 			"recruitable": false,
 			"faction": "Kobolds",
+			"equipped": {
+				"head": [],
+				"torso": [],
+				"right_hand": [{ "name": "Short Sword", "type": "sword", "hit_dice": 6 }],
+				"left_hand": [],
+				"right_leg": [],
+				"left_leg": []
+			},
 			"history": ["Born in the year " + str(GameData.data.year)]
 		}
 		npcs.push_back(kobold)
