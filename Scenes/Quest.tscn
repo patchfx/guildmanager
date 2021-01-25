@@ -34,3 +34,14 @@ text = "COMBAT LOG"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TakeTurn" type="Button" parent="."]
+margin_left = 1128.0
+margin_top = 43.0
+margin_right = 1455.0
+margin_bottom = 139.0
+text = "TAKE TURN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="TakeTurn" to="." method="_on_TakeTurn_button_up"]

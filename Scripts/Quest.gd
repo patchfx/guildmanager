@@ -3,10 +3,8 @@ extends Control
 var dice = preload("res://Scripts/Dice.gd").new()
 var combat = preload("res://Scripts/Combat.gd").new()
 var combat_order = []
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var enemies = []
+var friendlies = []
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +17,7 @@ func init():
 	$QuestName.text = quest.name
 	for npc in quest.enemies:
 		combat_order.push_front(npc)
+		enemies.push_back(npc)
 	
 	for party in quest.parties:
 		for recruit_id in party.recruits:
@@ -28,10 +27,15 @@ func init():
 				combat_order.push_back(recruit_id)
 			else:
 				combat_order.push_front(recruit_id)
+			friendlies.push_back(recruit_id)
 
-	combat.init(combat_order)
+	combat.init(combat_order, friendlies, enemies)
 	combat.play_round()
 
 
 func update_ui():
 	pass
+
+
+func _on_TakeTurn_button_up():
+	combat.play_round()
