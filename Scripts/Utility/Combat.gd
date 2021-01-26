@@ -1,6 +1,6 @@
 extends Node
 
-var dice = preload("res://Scripts/Dice.gd").new()
+var dice = preload("res://Scripts/Utility/Dice.gd").new()
 
 var combatants = []
 var friendlies = []

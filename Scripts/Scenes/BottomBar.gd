@@ -21,3 +21,6 @@ func _on_ContinueButton_button_up():
 func _on_DashboardButton_button_up():
 	get_parent().open_scene("Dashboard")
 
+
+func _on_ShopButton_button_up():
+	get_parent().open_scene("Shop")

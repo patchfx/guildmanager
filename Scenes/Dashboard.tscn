@@ -5,7 +5,8 @@
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 03.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Themes/header_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 04.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/Dashboard.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Scenes/Dashboard.gd" type="Script" id=9]
+
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -176,7 +177,7 @@ position = Vector2( 280.119, 565.846 )
 scale = Vector2( 1.02267, 1 )
 texture = SubResource( 2 )
 
-[node name="Title" type="Label" parent="Parties"]
+[node name="PartiesTitle" type="Label" parent="Parties"]
 margin_left = 57.5685
 margin_top = 297.642
 margin_right = 139.569

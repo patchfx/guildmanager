@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Continue.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Dashboard.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TopBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/BottomBar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Hire.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/CreateParty.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scripts/TopBar.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Scenes/TopBar.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/Scenes/Shop.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=11]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -27,6 +29,8 @@ visible = false
 visible = false
 
 [node name="TopBar" parent="." instance=ExtResource( 4 )]
+margin_right = 0.00012207
+margin_bottom = -1005.0
 script = ExtResource( 8 )
 
 [node name="BottomBar" parent="." instance=ExtResource( 5 )]
@@ -38,3 +42,21 @@ margin_top = 75.0
 margin_right = 1920.0
 
 [node name="Quest" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="Shop" type="Control" parent="."]
+margin_top = 75.0
+margin_right = 1920.0
+margin_bottom = 965.0
+theme = ExtResource( 11 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shop"]
+margin_left = 73.9989
+margin_top = 57.181
+margin_right = 126.999
+margin_bottom = 83.181
+text = "SHOP"

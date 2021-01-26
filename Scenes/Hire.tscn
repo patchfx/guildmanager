@@ -1,12 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scripts/Hire.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Scenes/Hire.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 03.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Themes/button_normal.tres" type="Texture" id=4]
 [ext_resource path="res://Assets/Themes/button_disabled.tres" type="Texture" id=5]
 [ext_resource path="res://Assets/Themes/button_active.tres" type="Texture" id=6]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 04.png" type="Texture" id=7]
+
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4

@@ -1,7 +1,7 @@
 extends Control
 
-var dice = preload("res://Scripts/Dice.gd").new()
-var combat = preload("res://Scripts/Combat.gd").new()
+var dice = preload("res://Scripts/Utility/Dice.gd").new()
+var combat = preload("res://Scripts/Utility/Combat.gd").new()
 var combat_order = []
 var enemies = []
 var friendlies = []

@@ -1,9 +1,9 @@
 extends Node
 
-var dice = preload("res://Scripts/Dice.gd").new()
-var uuid = preload("res://Scripts/UUID.gd").new()
-var name_generator = preload("res://Scripts/NameGenerator.gd").new()
-var personality_traits = preload("res://Scripts/PersonalityTraits.gd").new()
+var dice = preload("res://Scripts/Utility/Dice.gd").new()
+var uuid = preload("res://Scripts/Utility/UUID.gd").new()
+var name_generator = preload("res://Scripts/Generators/NameGenerator.gd").new()
+var personality_traits = preload("res://Scripts/Components/PersonalityTraits.gd").new()
 
 var npcs = []
 

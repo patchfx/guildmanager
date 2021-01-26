@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 01.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/GameMenu.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Components/GameMenu.gd" type="Script" id=3]
+
 
 [node name="TopBar" type="Control"]
 anchor_right = 1.0

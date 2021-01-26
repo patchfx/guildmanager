@@ -1,6 +1,6 @@
 extends Node
 
-var world_generator = preload("res://Scripts/GenerateWorld.gd").new()
+var world_generator = preload("res://Scripts/Generators/GenerateWorld.gd").new()
 var loaded = false
 
 var active_scene = "Dashboard"
@@ -41,6 +41,7 @@ func open_scene(scene_name):
 	$Continue.visible = false
 	$CreateParty.visible = false
 	$Quest.visible = false
+	$Shop.visible = false
 	var target_node = get_node(scene_name)
 	target_node.init()
 	target_node.visible = true

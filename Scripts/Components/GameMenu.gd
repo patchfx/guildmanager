@@ -1,6 +1,6 @@
 extends MenuButton
 
-var save_load = preload("res://Scripts/SaveLoad.gd").new()
+var save_load = preload("res://Scripts/Utility/SaveLoad.gd").new()
 var popup
 
 func _ready():
