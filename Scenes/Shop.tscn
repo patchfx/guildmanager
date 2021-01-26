@@ -13,9 +13,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 73.9989
-margin_top = 57.181
-margin_right = 126.999
-margin_bottom = 83.181
-text = "SHOP"
+[node name="ShopInventory" type="TabContainer" parent="."]
+margin_left = 41.4802
+margin_top = 20.3253
+margin_right = 698.48
+margin_bottom = 812.325
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ALL" type="Tabs" parent="ShopInventory"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+
+[node name="WEAPONS" type="Tabs" parent="ShopInventory"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 44.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="ARMOR" type="Tabs" parent="ShopInventory"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 44.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="InventoryList" type="ItemList" parent="."]
+margin_left = 54.0
+margin_top = 71.0
+margin_right = 685.0
+margin_bottom = 796.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+[connection signal="tab_changed" from="ShopInventory" to="." method="_on_ShopInventory_tab_changed"]

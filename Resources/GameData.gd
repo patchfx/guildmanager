@@ -9,7 +9,7 @@ var data = {
 	"year": 738,
 	"player": {
 		"name": "Falakin Pendrane",
-		"gold": 10,
+		"gold": 50,
 		"income": 0,
 		"expenditure": 0,
 		"experience": 0,
