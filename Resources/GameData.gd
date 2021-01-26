@@ -36,6 +36,10 @@ var data = {
 	"locations": [
 		{ "id": 0, "name": "Blackspell", "max_population": 30 }
 	],
+	"equipment": [
+		{ "name": "sword", "type": "weapon", "cost": 3 },
+		{ "name": "shield", "type": "armor", "cost": 5 }
+	],
 	"npcs": {},
 	"factions": [
 		{

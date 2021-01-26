@@ -7,22 +7,15 @@ func _ready():
 	pass # Replace with function body.
 
 func init():
-	var sword = { "name": "sword", "type": "weapon", "cost": 3 }
-	var shield = { "name": "shield", "type": "armor", "cost": 5 }
-
-	all_items.push_back(sword)
-	all_items.push_back(shield)
-
-	for item in all_items:
+	for item in GameData.data.equipment:
+		all_items.push_back(item)
 		_add_item(item.name)
-
-
-func _add_item(item):
-	$InventoryList.add_item(item.to_upper())
 
 func update_ui():
 	pass
 
+func _add_item(item):
+	$InventoryList.add_item(item.to_upper())
 
 func _on_ShopInventory_tab_changed(tab):
 	if tab == 0:
