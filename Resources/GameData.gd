@@ -20,7 +20,11 @@ var data = {
 			"name": "The Hammerthorns",
 			"renown": 1,
 			"recruits": [],
-			"parties": []
+			"parties": [],
+			"equipment": [
+				{ "name": "short sword", "type": "weapon", "cost": 3 },
+				{ "name": "kite shield", "type": "armor", "cost": 5 }
+			]
 		}
 	},
 	"quests": [{

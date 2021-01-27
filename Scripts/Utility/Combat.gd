@@ -6,7 +6,6 @@ var combatants = []
 var friendlies = []
 var enemies = []
 
-# TODO: Calculate this from weapons table 
 var hit_dice = 6
 
 # Called when the node enters the scene tree for the first time.
