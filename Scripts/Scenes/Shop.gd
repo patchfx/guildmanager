@@ -23,6 +23,8 @@ func init():
 		_add_item(guild_inventory, item.name)
 	filtered_guild_items = guild_items
 	
+	_on_ShopInventoryList_item_selected(0)
+	
 
 func update_ui():
 	pass
@@ -66,8 +68,12 @@ func _on_PlayerInventory_tab_changed(tab):
 func _on_ShopInventoryList_item_selected(index):
 	var item = filtered_all_items[index]
 	$ItemName.text = item.name.to_upper()
+	$BuyButton.visible = true
+	$SellButton.visible = false
 
 
 func _on_PlayerInventoryList_item_selected(index):
 	var item = filtered_guild_items[index]
 	$ItemName.text = item.name.to_upper()
+	$BuyButton.visible = false
+	$SellButton.visible = true

@@ -11,7 +11,7 @@ region = Rect2( 47, 157.412, 402, 524.853 )
 
 [node name="Shop" type="Control"]
 anchor_left = 0.000368309
-anchor_top = 0.00130946
+anchor_top = 0.00130943
 anchor_right = 0.000368309
 anchor_bottom = 0.00130943
 margin_left = -0.707153
@@ -83,19 +83,13 @@ margin_top = 36.0
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_top = 36.0
 
 [node name="ARMOR" type="Tabs" parent="PlayerInventory"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_top = 36.0
 
 [node name="PlayerInventoryList" type="ItemList" parent="."]
 margin_left = 1228.0
@@ -118,6 +112,28 @@ margin_right = 906.0
 margin_bottom = 162.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "ITEM NAME"
+
+[node name="BuyButton" type="Button" parent="."]
+visible = false
+margin_left = 865.0
+margin_top = 440.0
+margin_right = 1055.0
+margin_bottom = 487.0
+text = "BUY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SellButton" type="Button" parent="."]
+visible = false
+margin_left = 865.0
+margin_top = 440.0
+margin_right = 1055.0
+margin_bottom = 487.0
+text = "SELL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="tab_changed" from="ShopInventory" to="." method="_on_ShopInventory_tab_changed"]
 [connection signal="item_selected" from="ShopInventoryList" to="." method="_on_ShopInventoryList_item_selected"]
 [connection signal="tab_changed" from="PlayerInventory" to="." method="_on_PlayerInventory_tab_changed"]
