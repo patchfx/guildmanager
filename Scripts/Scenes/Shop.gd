@@ -38,7 +38,7 @@ func _filter_list(node, type, items):
 	for item in items:
 		if item.type == type || type == "all":
 			_add_item(node, item.name)
-			filtered.push_back(item.name)
+			filtered.push_back(item)
 	return filtered
 
 
@@ -69,6 +69,5 @@ func _on_ShopInventoryList_item_selected(index):
 
 
 func _on_PlayerInventoryList_item_selected(index):
-	print(filtered_guild_items)
 	var item = filtered_guild_items[index]
 	$ItemName.text = item.name.to_upper()
