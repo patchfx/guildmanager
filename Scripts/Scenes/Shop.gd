@@ -4,6 +4,10 @@ var all_items = []
 var guild_items = []
 var filtered_all_items = []
 var filtered_guild_items = []
+var shop_selected = 0
+var player_selected = 0
+var player_tab = 0
+var shop_tab = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,7 +50,7 @@ func _filter_list(node, type, items):
 
 func _on_ShopInventory_tab_changed(tab):
 	var node = $ShopInventoryList
-
+	shop_tab = tab
 	if tab == 0:
 		filtered_all_items = _filter_list(node, "all", all_items)
 	elif tab == 1:
@@ -57,6 +61,7 @@ func _on_ShopInventory_tab_changed(tab):
 
 func _on_PlayerInventory_tab_changed(tab):
 	var node = $PlayerInventoryList
+	player_tab = tab
 	if tab == 0:
 		filtered_guild_items = _filter_list(node, "all", guild_items)
 	elif tab == 1:
@@ -66,14 +71,48 @@ func _on_PlayerInventory_tab_changed(tab):
 
 
 func _on_ShopInventoryList_item_selected(index):
+	shop_selected = index
 	var item = filtered_all_items[index]
+	$ItemName.visible = true
 	$ItemName.text = item.name.to_upper()
+	$BuyButton.text = "BUY " + str(item.cost) + "g"
+	if GameData.data.player.gold >= item.cost:
+		$BuyButton.disabled = false
+	else:
+		$BuyButton.disabled = true
+	
 	$BuyButton.visible = true
 	$SellButton.visible = false
 
 
 func _on_PlayerInventoryList_item_selected(index):
+	player_selected = index
 	var item = filtered_guild_items[index]
+	$ItemName.visible = true
 	$ItemName.text = item.name.to_upper()
+	$SellButton.text = "SELL " + str(item.cost) + "g"
 	$BuyButton.visible = false
 	$SellButton.visible = true
+
+func _on_BuyButton_button_up():
+	pass
+
+func _on_SellButton_button_up():
+	var item = filtered_guild_items[player_selected]
+	var idx = 0
+	for equipment in guild_items:
+		if item.id == equipment.id:
+			guild_items.remove(idx)
+			GameData.data.player.gold += item.cost
+		idx += 1
+
+	if guild_items.size() > 0:
+		_on_PlayerInventory_tab_changed(player_tab)
+	else:
+		_on_PlayerInventory_tab_changed(player_tab)
+		_clear_item_panel()
+
+func _clear_item_panel():
+	$ItemName.visible = false
+	$SellButton.visible = false
+	$BuyButton.visible = false

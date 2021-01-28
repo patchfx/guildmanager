@@ -22,8 +22,8 @@ var data = {
 			"recruits": [],
 			"parties": [],
 			"equipment": [
-				{ "name": "short sword", "type": "weapon", "cost": 3 },
-				{ "name": "kite shield", "type": "armor", "cost": 5 }
+				{ "id": "303020202929", "name": "short sword", "type": "weapon", "cost": 3 },
+				{ "id": "292918182881", "name": "kite shield", "type": "armor", "cost": 5 }
 			]
 		}
 	},
@@ -41,8 +41,8 @@ var data = {
 		{ "id": 0, "name": "Blackspell", "max_population": 30 }
 	],
 	"equipment": [
-		{ "name": "sword", "type": "weapon", "cost": 3 },
-		{ "name": "shield", "type": "armor", "cost": 5 }
+		{ "id": "92928127171718", "name": "sword", "type": "weapon", "cost": 3 },
+		{ "id": "81281817217718", "name": "shield", "type": "armor", "cost": 5 }
 	],
 	"npcs": {},
 	"factions": [

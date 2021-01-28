@@ -138,3 +138,5 @@ __meta__ = {
 [connection signal="item_selected" from="ShopInventoryList" to="." method="_on_ShopInventoryList_item_selected"]
 [connection signal="tab_changed" from="PlayerInventory" to="." method="_on_PlayerInventory_tab_changed"]
 [connection signal="item_selected" from="PlayerInventoryList" to="." method="_on_PlayerInventoryList_item_selected"]
+[connection signal="button_up" from="BuyButton" to="." method="_on_BuyButton_button_up"]
+[connection signal="button_up" from="SellButton" to="." method="_on_SellButton_button_up"]
