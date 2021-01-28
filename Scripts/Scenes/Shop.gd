@@ -14,8 +14,18 @@ func _ready():
 	pass # Replace with function body.
 
 func init():
+	$PlayerInventoryList.clear()
+	$ShopInventoryList.clear()
 	var shop_inventory = $ShopInventoryList
 	var guild_inventory = $PlayerInventoryList
+	all_items = []
+	guild_items = []
+	filtered_all_items = []
+	filtered_guild_items = []
+	shop_selected = 0
+	player_selected = 0
+	player_tab = 0
+	shop_tab = 0
 
 	for item in GameData.data.equipment:
 		all_items.push_back(item)
@@ -95,7 +105,21 @@ func _on_PlayerInventoryList_item_selected(index):
 	$SellButton.visible = true
 
 func _on_BuyButton_button_up():
-	pass
+	var item = filtered_all_items[shop_selected]
+	var idx = 0
+	for equipment in all_items:
+		if item.id == equipment.id:
+			all_items.remove(idx)
+			GameData.data.player.gold -= item.cost
+			GameData.data.player.expenditure += item.cost
+			GameData.data.player.guild.equipment.push_back(item)
+		idx += 1
+
+	if all_items.size() > 0:
+		_on_ShopInventory_tab_changed(shop_tab)
+	else:
+		_on_ShopInventory_tab_changed(shop_tab)
+		_clear_item_panel()
 
 func _on_SellButton_button_up():
 	var item = filtered_guild_items[player_selected]
