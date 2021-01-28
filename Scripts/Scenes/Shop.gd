@@ -110,16 +110,15 @@ func _on_BuyButton_button_up():
 	for equipment in all_items:
 		if item.id == equipment.id:
 			all_items.remove(idx)
+			guild_items.push_back(item)
 			GameData.data.player.gold -= item.cost
 			GameData.data.player.expenditure += item.cost
 			GameData.data.player.guild.equipment.push_back(item)
 		idx += 1
 
-	if all_items.size() > 0:
-		_on_ShopInventory_tab_changed(shop_tab)
-	else:
-		_on_ShopInventory_tab_changed(shop_tab)
-		_clear_item_panel()
+	_on_ShopInventory_tab_changed(shop_tab)
+	_on_PlayerInventory_tab_changed(player_tab)
+	_clear_item_panel()
 
 func _on_SellButton_button_up():
 	var item = filtered_guild_items[player_selected]
@@ -130,12 +129,15 @@ func _on_SellButton_button_up():
 			GameData.data.player.gold += item.cost
 			GameData.data.player.income += item.cost
 		idx += 1
+	
+	idx = 0
+	for equipment in GameData.data.player.guild.equipment:
+		if item.id == equipment.id:
+			GameData.data.player.guild.equipment.remove(idx)
+		idx += 1
 
-	if guild_items.size() > 0:
-		_on_PlayerInventory_tab_changed(player_tab)
-	else:
-		_on_PlayerInventory_tab_changed(player_tab)
-		_clear_item_panel()
+	_on_PlayerInventory_tab_changed(player_tab)
+	_clear_item_panel()
 
 func _clear_item_panel():
 	$ItemName.visible = false
