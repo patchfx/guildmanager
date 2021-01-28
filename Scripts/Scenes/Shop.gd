@@ -104,6 +104,7 @@ func _on_SellButton_button_up():
 		if item.id == equipment.id:
 			guild_items.remove(idx)
 			GameData.data.player.gold += item.cost
+			GameData.data.player.income += item.cost
 		idx += 1
 
 	if guild_items.size() > 0:
