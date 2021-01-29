@@ -113,6 +113,10 @@ func _on_BuyButton_button_up():
 			guild_items.push_back(item)
 			GameData.data.player.gold -= item.cost
 			GameData.data.player.expenditure += item.cost
+			var depreciation = (item.cost / 100) * 20
+			if depreciation <= 0:
+				depreciation = 1
+			item.cost = item.cost - int(depreciation)
 			GameData.data.player.guild.equipment.push_back(item)
 		idx += 1
 
