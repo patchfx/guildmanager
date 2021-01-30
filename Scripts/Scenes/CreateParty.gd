@@ -10,6 +10,7 @@ func _ready():
 	pass # Replace with function body.
 
 func init():
+	$PartyName.text = ""
 	party_members = []
 	$PartyMembers.clear()
 	$GuildMembers.clear()
