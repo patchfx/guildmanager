@@ -3,6 +3,7 @@ extends Control
 var party_members = []
 var guild_members = []
 var selected_party_member = 0
+var uuid = preload("res://Scripts/Utility/UUID.gd").new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -64,6 +65,7 @@ func _on_CreateNewParty_button_up():
 				recruits.push_back(npc.id)
 
 	var party = {
+		"id": uuid.v4(),
 		"name": $PartyName.text,
 		"recruits": recruits
 	}
