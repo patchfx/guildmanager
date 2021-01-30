@@ -23,6 +23,7 @@ func init():
 	for party in GameData.data.player.guild.parties:
 		var party_item = party_grid_item.instance()
 		party_item.text = party.name
+		party_item.connect("button_up", self, "_party_clicked", [party.name])
 		party_grid.add_child(party_item)
 
 func update_ui():
@@ -69,3 +70,6 @@ func update_ui():
 		$GuildOverview/PlayerExperience.text = "EXPERIENCE: MASTER"
 	
 	$GuildOverview/RecruitsCount.text = "RECRUITS: " + str(GameData.data.player.guild.recruits.size())
+
+func _party_clicked(name):
+	get_parent().open_scene("Equipment")
