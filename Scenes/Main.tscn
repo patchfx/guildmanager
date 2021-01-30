@@ -48,3 +48,4 @@ visible = false
 visible = false
 
 [node name="Equipment" parent="." instance=ExtResource( 11 )]
+visible = false

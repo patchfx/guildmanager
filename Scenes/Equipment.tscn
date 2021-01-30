@@ -18,7 +18,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="GuildEquipmentContainer" type="CenterContainer" parent="."]
 margin_left = 68.0
 margin_top = 53.685
 margin_right = 624.0
@@ -27,7 +27,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+[node name="GuildEquipmentGrid" type="GridContainer" parent="GuildEquipmentContainer"]
 margin_left = 240.0
 margin_top = 381.0
 margin_right = 316.0
@@ -37,12 +37,12 @@ size_flags_vertical = 3
 custom_constants/hseparation = 8
 columns = 4
 
-[node name="TextureButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+[node name="EquipmentSlot" type="TextureButton" parent="GuildEquipmentContainer/GuildEquipmentGrid"]
 margin_right = 76.0
 margin_bottom = 75.0
 texture_normal = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="CenterContainer/GridContainer/TextureButton"]
+[node name="Icon" type="Sprite" parent="GuildEquipmentContainer/GuildEquipmentGrid/EquipmentSlot"]
 position = Vector2( 38.0977, 37.2817 )
 scale = Vector2( 0.458861, 0.456847 )
 texture = ExtResource( 2 )
