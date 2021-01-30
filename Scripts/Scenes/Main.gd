@@ -10,13 +10,6 @@ func _ready():
 	
 	print("Generating game world")
 	world_generator.generate()
-	
-	#var file = File.new()
-	#file.open("res://Resources/generated.json", file.READ)
-	#var json = file.get_as_text()
-	#var json_result = JSON.parse(json)
-	#file.close()
-	
 	print("Generating done")
 
 	var quests = GameData.data.quests
