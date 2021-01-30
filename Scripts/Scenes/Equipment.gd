@@ -15,7 +15,7 @@ func _ready():
 func init():
 	for equipment in GameData.data.player.guild.equipment:
 		var slot = equipment_slot.instance()
-		$GuildEquipmentContainer/GuildEquipmentGrid.add_child(slot)
+		$GuildEquipmentGrid.add_child(slot)
 
 func update_ui():
 	pass

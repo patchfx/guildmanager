@@ -11,21 +11,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GuildEquipmentContainer" type="CenterContainer" parent="."]
+[node name="GuildEquipmentContainer" type="TabContainer" parent="."]
 margin_left = 68.0
-margin_top = 53.685
+margin_top = 54.0
 margin_right = 624.0
-margin_bottom = 891.685
+margin_bottom = 175.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GuildEquipmentGrid" type="GridContainer" parent="GuildEquipmentContainer"]
-margin_left = 278.0
-margin_top = 419.0
-margin_right = 278.0
-margin_bottom = 419.0
+[node name="ALL" type="Tabs" parent="GuildEquipmentContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="GuildEquipmentGrid" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 72.0
+margin_top = 86.0
+margin_right = -1302.0
+margin_bottom = -708.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 8
 columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
