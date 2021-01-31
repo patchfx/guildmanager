@@ -15,7 +15,20 @@ func _ready():
 func init():
 	for equipment in GameData.data.player.guild.equipment:
 		var slot = equipment_slot.instance()
+		slot.node_id = equipment.id
+		slot.connect('mouse_entered', self, '_slot_hover', [slot])
+		slot.connect('mouse_exited', self, '_slot_exit', [slot])
 		$GuildEquipmentGrid.add_child(slot)
 
 func update_ui():
 	pass
+
+func _slot_hover(slot):
+	slot.active = true
+	print("ACTIVE " + slot.node_id)
+
+func _slot_exit(slot):
+	slot.active = false
+	print("INACTIVE" + slot.node_id)
+
+
