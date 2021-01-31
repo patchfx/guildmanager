@@ -65,7 +65,6 @@ func _filter_list(node, type, items):
 				if !filtered.keys().has(item):
 					filtered[item] = []
 				filtered[item] = items[item]
-	print(filtered)
 	return filtered
 
 
