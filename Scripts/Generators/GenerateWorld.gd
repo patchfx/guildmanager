@@ -10,6 +10,22 @@ var npcs = []
 func generate():
 	randomize()
 	load_quests()
+	generate_population()
+	generate_equipment()
+
+func load_quests():
+	for quest in GameData.data.quests:
+		quest.id = uuid.v4()
+
+func generate_equipment():
+	for i in range(0, 10):
+		var sword = { "id": uuid.v4(), "name": "Short Sword", "type": "weapon", "cost": 3 }
+		GameData.data.equipment.push_back(sword)
+
+		var shield = { "id": uuid.v4(), "name": "Small Wooden Shield", "type": "armor", "cost": 5 }
+		GameData.data.equipment.push_back(shield)
+
+func generate_population():
 	var years_with_population = 25
 	var npcs_to_generate = 200
 
@@ -29,12 +45,7 @@ func generate():
 	
 	for npc in npcs:
 		GameData.data.npcs[npc.id] = npc
-
-
-func load_quests():
-	for quest in GameData.data.quests:
-		quest.id = uuid.v4()
-
+	
 func generate_npcs(initial_population):
 	var populated_list = name_generator.load()
 

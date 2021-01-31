@@ -21,10 +21,7 @@ var data = {
 			"renown": 1,
 			"recruits": [],
 			"parties": [],
-			"equipment": [
-				{ "id": "303020202929", "name": "short sword", "type": "weapon", "cost": 3 },
-				{ "id": "292918182881", "name": "kite shield", "type": "armor", "cost": 5 }
-			]
+			"equipment": []
 		}
 	},
 	"quests": [{
@@ -40,10 +37,7 @@ var data = {
 	"locations": [
 		{ "id": 0, "name": "Blackspell", "max_population": 30 }
 	],
-	"equipment": [
-		{ "id": "92928127171718", "name": "sword", "type": "weapon", "cost": 3 },
-		{ "id": "81281817217718", "name": "shield", "type": "armor", "cost": 5 }
-	],
+	"equipment": [],
 	"npcs": {},
 	"factions": [
 		{

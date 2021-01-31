@@ -1,9 +1,9 @@
 extends Control
 
-var all_items = []
-var guild_items = []
-var filtered_all_items = []
-var filtered_guild_items = []
+var all_items = {}
+var guild_items = {}
+var filtered_all_items = {}
+var filtered_guild_items = {}
 var shop_selected = 0
 var player_selected = 0
 var player_tab = 0
@@ -18,26 +18,32 @@ func init():
 	$ShopInventoryList.clear()
 	var shop_inventory = $ShopInventoryList
 	var guild_inventory = $PlayerInventoryList
-	all_items = []
-	guild_items = []
-	filtered_all_items = []
-	filtered_guild_items = []
+	all_items = {}
+	guild_items = {}
+	filtered_all_items = {}
+	filtered_guild_items = {}
 	shop_selected = 0
 	player_selected = 0
 	player_tab = 0
 	shop_tab = 0
 
 	for item in GameData.data.equipment:
-		all_items.push_back(item)
-		_add_item(shop_inventory, item.name)
+		if !all_items.keys().has(item.name):
+			all_items[item.name] = []
+			_add_item(shop_inventory, item.name)
+		all_items[item.name].push_back(item)
+
 	filtered_all_items = all_items
 	
 	for item in GameData.data.player.guild.equipment:
-		guild_items.push_back(item)
-		_add_item(guild_inventory, item.name)
+		if !guild_items.keys().has(item.name):
+			guild_items[item.name] = []
+			_add_item(guild_inventory, item.name)
+		guild_items[item.name].push_back(item)
+	
 	filtered_guild_items = guild_items
 	
-	_on_ShopInventoryList_item_selected(0)
+	#_on_ShopInventoryList_item_selected(0)
 	
 
 func update_ui():
@@ -48,13 +54,18 @@ func _add_item(node, item):
 
 
 func _filter_list(node, type, items):
-	var filtered = []
+	var filtered = {}
 	node.clear()
 
-	for item in items:
-		if item.type == type || type == "all":
-			_add_item(node, item.name)
-			filtered.push_back(item)
+	for item in items.keys():
+		var check_item = items[item]
+		if check_item.size() > 0:
+			if check_item[0].type == type || type == "all":
+				_add_item(node, item)
+				if !filtered.keys().has(item):
+					filtered[item] = []
+				filtered[item] = items[item]
+	print(filtered)
 	return filtered
 
 
@@ -82,7 +93,8 @@ func _on_PlayerInventory_tab_changed(tab):
 
 func _on_ShopInventoryList_item_selected(index):
 	shop_selected = index
-	var item = filtered_all_items[index]
+	var key = filtered_all_items.keys()[index]
+	var item = filtered_all_items[key][0]
 	$ItemName.visible = true
 	$ItemName.text = item.name.to_upper()
 	$BuyButton.text = "BUY " + str(item.cost) + "g"
@@ -97,7 +109,8 @@ func _on_ShopInventoryList_item_selected(index):
 
 func _on_PlayerInventoryList_item_selected(index):
 	player_selected = index
-	var item = filtered_guild_items[index]
+	var key = filtered_guild_items.keys()[index]
+	var item = filtered_guild_items[key][0]
 	$ItemName.visible = true
 	$ItemName.text = item.name.to_upper()
 	$SellButton.text = "SELL " + str(item.cost) + "g"
@@ -105,12 +118,15 @@ func _on_PlayerInventoryList_item_selected(index):
 	$SellButton.visible = true
 
 func _on_BuyButton_button_up():
-	var item = filtered_all_items[shop_selected]
+	var key = filtered_all_items.keys()[shop_selected]
+	var item = filtered_all_items[key][0]
 	var idx = 0
-	for equipment in all_items:
+	for equipment in all_items[key]:
 		if item.id == equipment.id:
-			all_items.remove(idx)
-			guild_items.push_back(item)
+			all_items[key].remove(idx)
+			if !guild_items.keys().has(item.name):
+				guild_items[item.name] = []
+			guild_items[item.name].push_back(item)
 			GameData.data.player.gold -= item.cost
 			GameData.data.player.expenditure += item.cost
 			var depreciation = (item.cost / 100) * 20
@@ -124,12 +140,13 @@ func _on_BuyButton_button_up():
 	_on_PlayerInventory_tab_changed(player_tab)
 	_clear_item_panel()
 
-func _on_SellButton_button_up():
-	var item = filtered_guild_items[player_selected]
+func _on_SellButton_button_up():	
+	var key = filtered_guild_items.keys()[player_selected]
+	var item = filtered_guild_items[key][0]
 	var idx = 0
-	for equipment in guild_items:
+	for equipment in guild_items[key]:
 		if item.id == equipment.id:
-			guild_items.remove(idx)
+			guild_items[key].remove(idx)
 			GameData.data.player.gold += item.cost
 			GameData.data.player.income += item.cost
 		idx += 1
