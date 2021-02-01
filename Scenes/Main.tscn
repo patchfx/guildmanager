@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Continue.tscn" type="PackedScene" id=2]
@@ -11,6 +11,14 @@
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Shop.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Equipment.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=12]
+[ext_resource path="res://Scripts/Scenes/Market.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 05.png" type="Texture" id=14]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 461.458, 101.3, 126.985, 47.5572 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -49,3 +57,75 @@ visible = false
 
 [node name="Equipment" parent="." instance=ExtResource( 11 )]
 visible = false
+
+[node name="Market" type="Control" parent="."]
+margin_top = 75.0
+margin_right = 1920.0
+margin_bottom = 950.0
+theme = ExtResource( 12 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarketContainer" type="TabContainer" parent="Market"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 880.0
+margin_bottom = 840.0
+tab_align = 0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ALL" type="Tabs" parent="Market/MarketContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+
+[node name="AllItemsContainer" type="ScrollContainer" parent="Market/MarketContainer/ALL"]
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 829.0
+margin_bottom = 755.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllItemsGrid" type="GridContainer" parent="Market/MarketContainer/ALL/AllItemsContainer"]
+margin_right = 811.0
+margin_bottom = 733.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 10
+
+[node name="EquipmentContainer" type="TabContainer" parent="Market"]
+margin_left = 1040.0
+margin_top = 30.0
+margin_right = 1890.0
+margin_bottom = 840.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="EquipmentPopup" type="TextureRect" parent="Market"]
+visible = false
+margin_right = 250.0
+margin_bottom = 100.0
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Market/EquipmentPopup"]
+margin_left = 11.0
+margin_top = 12.0
+margin_right = 180.0
+margin_bottom = 38.0
+text = "EQUIPMENT NAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
