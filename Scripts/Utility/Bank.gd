@@ -3,9 +3,13 @@ extends Node
 var player = GameData.data.player
 
 
+func balance():
+	return player.gold
+
 func purchase(cost):
 	player.gold -= cost
 	player.expenditure += cost
 
-func balance():
-	return player.gold
+func sell(cost):
+	player.gold += cost
+	player.income += cost

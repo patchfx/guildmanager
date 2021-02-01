@@ -22,7 +22,7 @@ func _populate_shop_items():
 		slot.node_id = equipment.id
 		slot.connect('mouse_entered', self, '_slot_hover', [slot, GameData.data.equipment])
 		slot.connect('mouse_exited', self, '_slot_exit', [slot])
-		slot.connect('button_up', self, '_slot_clicked', [slot])
+		slot.connect('button_up', self, '_slot_purchase', [slot])
 		$MarketContainer/ALL/AllItemsContainer/AllItemsGrid.add_child(slot)
 
 func _populate_guild_items():
@@ -31,7 +31,7 @@ func _populate_guild_items():
 		slot.node_id = equipment.id
 		slot.connect('mouse_entered', self, '_slot_hover', [slot, GameData.data.player.guild.equipment])
 		slot.connect('mouse_exited', self, '_slot_exit', [slot])
-		slot.connect('button_up', self, '_slot_clicked', [slot])
+		slot.connect('button_up', self, '_slot_sell', [slot])
 		$EquipmentContainer/ALL/AllItemsContainer/AllItemsGrid.add_child(slot)
 
 func _slot_hover(slot, items):
@@ -51,7 +51,7 @@ func _slot_exit(slot):
 	popup.set_name("")
 	popup.visible = false
 
-func _slot_clicked(slot):
+func _slot_purchase(slot):
 	var idx = 0
 	for item in GameData.data.equipment:
 		if item.id == slot.node_id:
@@ -62,6 +62,15 @@ func _slot_clicked(slot):
 				_repopulate_containers()
 			else:
 				print('NOT ENOUGH MONEY!!')
+	idx += 1
+
+func _slot_sell(slot):
+	var idx = 0
+	for item in GameData.data.player.guild.equipment:
+		if item.id == slot.node_id:
+			GameData.data.player.guild.equipment.remove(idx)
+			banking.sell(item.cost)
+			_repopulate_containers()
 	idx += 1
 
 func _repopulate_containers():
