@@ -99,7 +99,29 @@ margin_left = 1040.0
 margin_top = 30.0
 margin_right = 1890.0
 margin_bottom = 840.0
+tab_align = 0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="ALL" type="Tabs" parent="Market/EquipmentContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+
+[node name="AllItemsContainer" type="ScrollContainer" parent="Market/EquipmentContainer/ALL"]
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 829.0
+margin_bottom = 755.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllItemsGrid" type="GridContainer" parent="Market/EquipmentContainer/ALL/AllItemsContainer"]
+margin_right = 811.0
+margin_bottom = 733.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 10
