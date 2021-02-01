@@ -1,10 +1,14 @@
 extends Control
 
 var equipment_slot = preload("res://Scenes/EquipmentSlot.tscn")
+var equipment_popup = preload("res://Scenes/EquipmentPopup.tscn")
 
+var popup
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	popup = equipment_popup.instance()
+	popup.visible = false
+	add_child(popup)
 
 func init():
 	for equipment in GameData.data.equipment:
@@ -19,16 +23,16 @@ func update_ui():
 
 func _slot_hover(slot):
 	slot.active = true
-	$EquipmentPopup.visible = true
+	popup.visible = true
 	for item in GameData.data.equipment:
 		if item.id == slot.node_id:
-			$EquipmentPopup/Name.text = item.name.to_upper()
+			popup.get_node("Name").text = item.name.to_upper()
 			
 			var slot_pos = slot.get_position()
 			slot_pos.x = slot_pos.x + 50
-			$EquipmentPopup.set_position(slot_pos)
+			popup.set_position(slot_pos)
 
 func _slot_exit(slot):
 	slot.active = false
-	$EquipmentPopup/Name.text = ""
-	$EquipmentPopup.visible = false
+	popup.get_node("Name").text = ""
+	popup.visible = false

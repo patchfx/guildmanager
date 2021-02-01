@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Continue.tscn" type="PackedScene" id=2]
@@ -13,12 +13,6 @@
 [ext_resource path="res://Scenes/Equipment.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=12]
 [ext_resource path="res://Scripts/Scenes/Market.gd" type="Script" id=13]
-[ext_resource path="res://Assets/Images/Game UI Interface Pack - Medieval Fantasy Edition - Source 05.png" type="Texture" id=14]
-
-[sub_resource type="AtlasTexture" id=1]
-flags = 4
-atlas = ExtResource( 14 )
-region = Rect2( 461.458, 101.3, 126.985, 47.5572 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -107,25 +101,5 @@ margin_right = 1890.0
 margin_bottom = 840.0
 __meta__ = {
 "_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="EquipmentPopup" type="TextureRect" parent="Market"]
-visible = false
-margin_right = 250.0
-margin_bottom = 100.0
-texture = SubResource( 1 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Name" type="Label" parent="Market/EquipmentPopup"]
-margin_left = 11.0
-margin_top = 12.0
-margin_right = 180.0
-margin_bottom = 38.0
-text = "EQUIPMENT NAME"
-__meta__ = {
 "_edit_use_anchors_": false
 }
