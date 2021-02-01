@@ -26,13 +26,12 @@ func _slot_hover(slot):
 	popup.visible = true
 	for item in GameData.data.equipment:
 		if item.id == slot.node_id:
-			popup.get_node("Name").text = item.name.to_upper()
-			
+			popup.set_name(item.name.to_upper())
 			var slot_pos = slot.get_position()
 			slot_pos.x = slot_pos.x + 50
 			popup.set_position(slot_pos)
 
 func _slot_exit(slot):
 	slot.active = false
-	popup.get_node("Name").text = ""
+	popup.set_name("")
 	popup.visible = false
