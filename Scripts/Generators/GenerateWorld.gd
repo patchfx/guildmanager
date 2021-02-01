@@ -20,10 +20,38 @@ func load_quests():
 func generate_equipment():
 	for i in range(0, 10):
 		var sword = { "id": uuid.v4(), "name": "Short Sword", "type": "weapon", "cost": 3 }
+		var dagger = { "id": uuid.v4(), "name": "Dagger", "type": "weapon", "cost": 3 }
+		var staff = { "id": uuid.v4(), "name": "Staff", "type": "weapon", "cost": 2 }
+		var sling = { "id": uuid.v4(), "name": "Sling", "type": "weapon", "cost": 2 }
+		var club = { "id": uuid.v4(), "name": "Club", "type": "weapon", "cost": 2 }
+		var flail = { "id": uuid.v4(), "name": "Flail", "type": "weapon", "cost": 3 }
+		var spear = { "id": uuid.v4(), "name": "Spear", "type": "weapon", "cost": 2 }
+		var short_bow = { "id": uuid.v4(), "name": "Short Bow", "type": "weapon", "cost": 2 }
+		var claymore = { "id": uuid.v4(), "name": "Claymore", "type": "weapon", "cost": 2 }
+		var long_sword = { "id": uuid.v4(), "name": "Long Sword", "type": "weapon", "cost": 2 }
+		var lance = { "id": uuid.v4(), "name": "Lance", "type": "weapon", "cost": 2 }
+		var crossbow = { "id": uuid.v4(), "name": "Heavy Crossbow", "type": "weapon", "cost": 2 }
+		
 		GameData.data.equipment.push_back(sword)
+		GameData.data.equipment.push_back(dagger)
+		GameData.data.equipment.push_back(staff)
+		GameData.data.equipment.push_back(sling)
+		GameData.data.equipment.push_back(club)
+		GameData.data.equipment.push_back(flail)
+		GameData.data.equipment.push_back(spear)
+		GameData.data.equipment.push_back(short_bow)
+		GameData.data.equipment.push_back(claymore)
+		GameData.data.equipment.push_back(long_sword)
+		GameData.data.equipment.push_back(lance)
+		GameData.data.equipment.push_back(crossbow)
 
-		var shield = { "id": uuid.v4(), "name": "Small Wooden Shield", "type": "armor", "cost": 5 }
-		GameData.data.equipment.push_back(shield)
+		var small_shield = { "id": uuid.v4(), "name": "Small Wooden Shield", "type": "armor", "cost": 5 }
+		var wooden_shield = { "id": uuid.v4(), "name": "Wooden Shield", "type": "armor", "cost": 7 }
+		var tower_shield = { "id": uuid.v4(), "name": "Tower Shield", "type": "armor", "cost": 10 }
+
+		GameData.data.equipment.push_back(small_shield)
+		GameData.data.equipment.push_back(wooden_shield)
+		GameData.data.equipment.push_back(tower_shield)
 
 func generate_population():
 	var years_with_population = 25
