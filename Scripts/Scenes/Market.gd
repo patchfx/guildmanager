@@ -27,6 +27,8 @@ func _slot_hover(slot):
 	for item in GameData.data.equipment:
 		if item.id == slot.node_id:
 			popup.set_name(item.name.to_upper())
+			popup.set_type(item.type.to_upper())
+			popup.set_cost(str(item.cost))
 			var slot_pos = slot.get_position()
 			slot_pos.x = slot_pos.x + 50
 			popup.set_position(slot_pos)

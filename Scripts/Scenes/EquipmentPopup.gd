@@ -12,3 +12,9 @@ func _ready():
 
 func set_name(name):
 	$Name.text = name
+
+func set_type(type):
+	$Type.text = type
+
+func set_cost(cost):
+	$Cost.text = cost + "gp"
