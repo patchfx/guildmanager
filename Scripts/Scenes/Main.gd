@@ -34,7 +34,7 @@ func open_scene(scene_name):
 	$Continue.visible = false
 	$CreateParty.visible = false
 	$Quest.visible = false
-	$Shop.visible = false
+
 	$Equipment.visible = false
 	$Market.visible = false
 	var target_node = get_node(scene_name)
