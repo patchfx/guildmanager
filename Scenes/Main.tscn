@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Continue.tscn" type="PackedScene" id=2]
@@ -9,9 +9,8 @@
 [ext_resource path="res://Scenes/CreateParty.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Scenes/TopBar.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Market.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Equipment.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=12]
-[ext_resource path="res://Scripts/Scenes/Market.gd" type="Script" id=13]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -48,168 +47,4 @@ visible = false
 [node name="Equipment" parent="." instance=ExtResource( 11 )]
 visible = false
 
-[node name="Market" type="Control" parent="."]
-margin_top = 75.0
-margin_right = 1920.0
-margin_bottom = 950.0
-theme = ExtResource( 12 )
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MarketContainer" type="TabContainer" parent="Market"]
-margin_left = 30.0
-margin_top = 30.0
-margin_right = 880.0
-margin_bottom = 840.0
-tab_align = 0
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="ALL" type="Tabs" parent="Market/MarketContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 36.0
-
-[node name="AllItemsContainer" type="ScrollContainer" parent="Market/MarketContainer/ALL"]
-margin_left = 18.0
-margin_top = 22.0
-margin_right = 829.0
-margin_bottom = 755.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AllItemsGrid" type="GridContainer" parent="Market/MarketContainer/ALL/AllItemsContainer"]
-margin_right = 811.0
-margin_bottom = 733.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 10
-
-[node name="WEAPONS" type="Tabs" parent="Market/MarketContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 36.0
-
-[node name="WeaponsItemsContainer" type="ScrollContainer" parent="Market/MarketContainer/WEAPONS"]
-margin_left = 18.0
-margin_top = 22.0
-margin_right = 829.0
-margin_bottom = 755.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WeaponsItemsGrid" type="GridContainer" parent="Market/MarketContainer/WEAPONS/WeaponsItemsContainer"]
-margin_right = 811.0
-margin_bottom = 733.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 10
-
-[node name="ARMOR" type="Tabs" parent="Market/MarketContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 36.0
-
-[node name="ArmorItemsContainer" type="ScrollContainer" parent="Market/MarketContainer/ARMOR"]
-margin_left = 18.0
-margin_top = 22.0
-margin_right = 829.0
-margin_bottom = 755.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ArmorItemsGrid" type="GridContainer" parent="Market/MarketContainer/ARMOR/ArmorItemsContainer"]
-margin_right = 811.0
-margin_bottom = 733.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 10
-
-[node name="EquipmentContainer" type="TabContainer" parent="Market"]
-margin_left = 1040.0
-margin_top = 30.0
-margin_right = 1890.0
-margin_bottom = 840.0
-tab_align = 0
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="ALL" type="Tabs" parent="Market/EquipmentContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 36.0
-
-[node name="AllItemsContainer" type="ScrollContainer" parent="Market/EquipmentContainer/ALL"]
-margin_left = 18.0
-margin_top = 22.0
-margin_right = 829.0
-margin_bottom = 755.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AllItemsGrid" type="GridContainer" parent="Market/EquipmentContainer/ALL/AllItemsContainer"]
-margin_right = 811.0
-margin_bottom = 733.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 10
-
-[node name="WEAPONS" type="Tabs" parent="Market/EquipmentContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1010.0
-margin_top = 36.0
-margin_right = -1010.0
-
-[node name="WeaponsItemsContainer" type="ScrollContainer" parent="Market/EquipmentContainer/WEAPONS"]
-margin_left = 18.0
-margin_top = 22.0
-margin_right = 829.0
-margin_bottom = 755.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WeaponsItemsGrid" type="GridContainer" parent="Market/EquipmentContainer/WEAPONS/WeaponsItemsContainer"]
-margin_right = 811.0
-margin_bottom = 733.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 10
-
-[node name="ARMOR" type="Tabs" parent="Market/EquipmentContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1010.0
-margin_top = 36.0
-margin_right = -1010.0
-
-[node name="ArmorItemsContainer" type="ScrollContainer" parent="Market/EquipmentContainer/ARMOR"]
-margin_left = 18.0
-margin_top = 22.0
-margin_right = 829.0
-margin_bottom = 755.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ArmorItemsGrid" type="GridContainer" parent="Market/EquipmentContainer/ARMOR/ArmorItemsContainer"]
-margin_right = 811.0
-margin_bottom = 733.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 10
+[node name="Market" parent="." instance=ExtResource( 10 )]

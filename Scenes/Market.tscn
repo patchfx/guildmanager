@@ -1,0 +1,166 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/Scenes/Market.gd" type="Script" id=2]
+
+[node name="Market" type="Control"]
+margin_top = 75.0
+margin_right = 1920.0
+margin_bottom = 950.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarketContainer" type="TabContainer" parent="."]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 880.0
+margin_bottom = 840.0
+tab_align = 0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ALL" type="Tabs" parent="MarketContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+
+[node name="AllItemsContainer" type="ScrollContainer" parent="MarketContainer/ALL"]
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 829.0
+margin_bottom = 755.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllItemsGrid" type="GridContainer" parent="MarketContainer/ALL/AllItemsContainer"]
+margin_right = 811.0
+margin_bottom = 733.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 10
+
+[node name="WEAPONS" type="Tabs" parent="MarketContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+
+[node name="WeaponsItemsContainer" type="ScrollContainer" parent="MarketContainer/WEAPONS"]
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 829.0
+margin_bottom = 755.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeaponsItemsGrid" type="GridContainer" parent="MarketContainer/WEAPONS/WeaponsItemsContainer"]
+margin_right = 811.0
+margin_bottom = 733.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 10
+
+[node name="ARMOR" type="Tabs" parent="MarketContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+
+[node name="ArmorItemsContainer" type="ScrollContainer" parent="MarketContainer/ARMOR"]
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 829.0
+margin_bottom = 755.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArmorItemsGrid" type="GridContainer" parent="MarketContainer/ARMOR/ArmorItemsContainer"]
+margin_right = 811.0
+margin_bottom = 733.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 10
+
+[node name="EquipmentContainer" type="TabContainer" parent="."]
+margin_left = 1040.0
+margin_top = 30.0
+margin_right = 1890.0
+margin_bottom = 840.0
+tab_align = 0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ALL" type="Tabs" parent="EquipmentContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+
+[node name="AllItemsContainer" type="ScrollContainer" parent="EquipmentContainer/ALL"]
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 829.0
+margin_bottom = 755.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllItemsGrid" type="GridContainer" parent="EquipmentContainer/ALL/AllItemsContainer"]
+margin_right = 811.0
+margin_bottom = 733.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 10
+
+[node name="WEAPONS" type="Tabs" parent="EquipmentContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+
+[node name="WeaponsItemsContainer" type="ScrollContainer" parent="EquipmentContainer/WEAPONS"]
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 829.0
+margin_bottom = 755.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeaponsItemsGrid" type="GridContainer" parent="EquipmentContainer/WEAPONS/WeaponsItemsContainer"]
+margin_right = 811.0
+margin_bottom = 733.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 10
+
+[node name="ARMOR" type="Tabs" parent="EquipmentContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+
+[node name="ArmorItemsContainer" type="ScrollContainer" parent="EquipmentContainer/ARMOR"]
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 829.0
+margin_bottom = 755.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArmorItemsGrid" type="GridContainer" parent="EquipmentContainer/ARMOR/ArmorItemsContainer"]
+margin_right = 811.0
+margin_bottom = 733.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 10
